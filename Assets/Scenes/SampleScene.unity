@@ -395,8 +395,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97150aa3ca6e9b84abee41d781e24a83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  max_move_speed: 10
-  movement_acceleration: 20
+  max_move_speed: 5
+  movement_acceleration: 30
   friction: 30
 --- !u!212 &1581200167
 SpriteRenderer:
