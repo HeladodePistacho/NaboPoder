@@ -5,13 +5,15 @@ using UnityEngine;
 public class FollowBehaviour : StateMachineBehaviour
 {
     private Transform playerPos;
-    public float speed;
+    private float speed;
     public float rangeLost;
 
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         playerPos = GameObject.FindGameObjectWithTag("Player").transform;
+        speed = animator.gameObject.GetComponent<EnemyStats>().speed;
+        rangeLost = animator.gameObject.GetComponent<EnemyStats>().sightRange;
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
@@ -19,9 +21,9 @@ public class FollowBehaviour : StateMachineBehaviour
     {
         animator.transform.position = Vector2.MoveTowards(animator.transform.position, playerPos.position, speed*Time.deltaTime);
 
-        if (Vector3.Distance(playerPos.position, animator.transform.position) >= rangeLost)
+        if (Vector3.Distance(playerPos.position, animator.transform.position) >= rangeLost*2)
         {
-            animator.SetBool("isFollowing", false);
+            animator.SetBool("isPatroling", true);
         }
     }
 
