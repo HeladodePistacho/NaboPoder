@@ -22,11 +22,6 @@ public class SceneHandler : MonoBehaviour
             Debug.Log("INSTANCE CREATED");
     }
 
-    void Start()
-    {
-        GotoMenu();
-    }
-
     // Getters
     public static SceneHandler GetInstance()
     {
