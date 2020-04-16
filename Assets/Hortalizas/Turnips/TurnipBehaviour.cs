@@ -6,7 +6,7 @@ using Pathfinding;
 public enum TurnipState
 {
     IDLE,
-    MOVING,
+    GOING_TO,
     FOLLOWING_PLAYER,
     WAITING_FOR_PLAYER
 }
@@ -24,7 +24,6 @@ public class TurnipBehaviour : MonoBehaviour
     Camera main;
     //PossibleTargets
     Transform player;
-
 
     // Start is called before the first frame update
     void Start()
@@ -66,6 +65,13 @@ public class TurnipBehaviour : MonoBehaviour
         {
             SetState_FollowPlayer();
         }
+    }
+
+    public void SetTargetPosition(Vector3 _targetPos)
+    {
+        turnipState = TurnipState.GOING_TO;
+        pathfinding.SetTarget(_targetPos, SetState_FollowPlayer);
+
     }
 
     private void OnDrawGizmos()

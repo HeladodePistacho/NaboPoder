@@ -6,7 +6,8 @@ using UnityEngine.Events;
 
 public class HortalizaPathfinding : MonoBehaviour
 {
-    public Transform target;
+    public Transform targetObj;
+    public Vector3 targetPos;
     public float acceleration = 200f;
     public float maxSpeed = 10f;
     public float nextWaypointDistance = 3f;
@@ -34,13 +35,23 @@ public class HortalizaPathfinding : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
     }
 
-    public void SetTarget(Transform _target, UnityAction onEnd)
+    public void SetTarget(Vector3 _target, UnityAction onEnd)
     {
         if(path != null)
             CancelInvoke("UpdatePath");
 
         onReachedEnd = onEnd;
-        target = _target;
+        targetObj = null;
+        targetPos = _target;
+        InvokeRepeating("UpdatePath", 0f, refreshPathRate);
+    }
+    public void SetTarget(Transform _target, UnityAction onEnd)
+    {
+        if (path != null)
+            CancelInvoke("UpdatePath");
+
+        onReachedEnd = onEnd;
+        targetObj = _target;
         InvokeRepeating("UpdatePath", 0f, refreshPathRate);
     }
 
@@ -57,7 +68,10 @@ public class HortalizaPathfinding : MonoBehaviour
     {
         if (seeker.IsDone())
         {
-            seeker.StartPath(rb.position, target.position, OnPathGenerationComplete);
+            if(targetObj != null)
+              seeker.StartPath(rb.position, targetObj.position, OnPathGenerationComplete);
+            else
+              seeker.StartPath(rb.position, targetPos, OnPathGenerationComplete);
         }
 
     }
@@ -99,11 +113,11 @@ public class HortalizaPathfinding : MonoBehaviour
         if (distance < nextWaypointDistance)
             currentWaypoint++;
 
-        if (force.x >= 0.05)
+        if (force.x >= 5)
         {
             graphics.localScale = right;
         }
-        else if (force.x <= -0.05)
+        else if (force.x <= -5)
         {
             graphics.localScale = left;
         }
