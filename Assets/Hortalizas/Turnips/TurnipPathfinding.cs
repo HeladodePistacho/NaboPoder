@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Pathfinding;
+using UnityEngine.Events;
 
 public class TurnipPathfinding : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class TurnipPathfinding : MonoBehaviour
     public float acceleration = 200f;
     public float maxSpeed = 10f;
     public float nextWaypointDistance = 3f;
+    public float refreshPathRate = 0.5f;
 
     Vector2 currentMovementSpeed = Vector2.zero;
 
@@ -23,28 +25,40 @@ public class TurnipPathfinding : MonoBehaviour
     Seeker seeker;
     Rigidbody2D rb;
 
+    UnityAction onReachedEnd;
+
     // Start is called before the first frame update
     void Start()
     {
         seeker = GetComponent<Seeker>();
         rb = GetComponent<Rigidbody2D>();
+    }
 
-        InvokeRepeating("UpdatePath", 0f, .5f);
+    public void SetTarget(Transform _target, UnityAction onEnd)
+    {
+        if(path != null)
+            CancelInvoke("UpdatePath");
+
+        onReachedEnd = onEnd;
+        target = _target;
+        InvokeRepeating("UpdatePath", 0f, refreshPathRate);
     }
 
     void UpdatePath()
     {
         if (seeker.IsDone())
-            seeker.StartPath(rb.position, target.position, OnPathComplete); 
+        {
+            seeker.StartPath(rb.position, target.position, OnPathGenerationComplete);
+        }
 
     }
 
-    void OnPathComplete(Path p)
+    void OnPathGenerationComplete(Path p)
     {
         if(!p.error)
         {
             path = p;
-            currentWaypoint = 0;
+            currentWaypoint = 0;           
         }
     }
 
@@ -58,6 +72,9 @@ public class TurnipPathfinding : MonoBehaviour
         {
             rb.velocity = Vector2.zero;
             reachedEnd = true;
+            CancelInvoke("UpdatePath");
+            onReachedEnd.Invoke();
+            path = null;
             return;
         }
         else reachedEnd = false;
@@ -77,11 +94,11 @@ public class TurnipPathfinding : MonoBehaviour
         if (distance < nextWaypointDistance)
             currentWaypoint++;
 
-        if (rb.velocity.x >= 0.05)
+        if (force.x >= 0.05)
         {
             graphics.localScale = right;
         }
-        else if (rb.velocity.x <= -0.05)
+        else if (force.x <= -0.05)
         {
             graphics.localScale = left;
         }
