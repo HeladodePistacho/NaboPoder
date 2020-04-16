@@ -4,7 +4,7 @@ using UnityEngine;
 using Pathfinding;
 using UnityEngine.Events;
 
-public class TurnipPathfinding : MonoBehaviour
+public class HortalizaPathfinding : MonoBehaviour
 {
     public Transform target;
     public float acceleration = 200f;
@@ -44,6 +44,15 @@ public class TurnipPathfinding : MonoBehaviour
         InvokeRepeating("UpdatePath", 0f, refreshPathRate);
     }
 
+    public void Stop()
+    {
+        rb.velocity = Vector2.zero;
+        reachedEnd = true;
+        CancelInvoke("UpdatePath");
+        onReachedEnd.Invoke();
+        path = null;
+    }
+
     void UpdatePath()
     {
         if (seeker.IsDone())
@@ -70,11 +79,7 @@ public class TurnipPathfinding : MonoBehaviour
 
         if (currentWaypoint >= path.vectorPath.Count)
         {
-            rb.velocity = Vector2.zero;
-            reachedEnd = true;
-            CancelInvoke("UpdatePath");
-            onReachedEnd.Invoke();
-            path = null;
+            Stop();
             return;
         }
         else reachedEnd = false;
