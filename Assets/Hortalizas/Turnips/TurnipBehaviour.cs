@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using Pathfinding;
 
 public enum TurnipState
 {
@@ -13,6 +13,7 @@ public enum TurnipState
 
 public class TurnipBehaviour : MonoBehaviour
 {
+
     public float maxDistanceToPlayer = 10f;
 
     public TurnipState turnipState = TurnipState.GO_TO;
