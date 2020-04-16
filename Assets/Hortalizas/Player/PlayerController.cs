@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-
     public float max_move_speed = 0.0f;
     public float movement_acceleration = 0.0f;
     public float friction = 0.0f;
@@ -47,21 +46,17 @@ public class PlayerController : MonoBehaviour
         {
             //Decelerate
             current_movement_speed.x -= Mathf.Sign(current_movement_speed.x) * friction * Time.deltaTime;
-            if (Mathf.Abs(current_movement_speed.x) < 0.5) current_movement_speed.x = 0.0f;
+            if (Mathf.Abs(current_movement_speed.x) <= 1) current_movement_speed.x = 0.0f;
         }
 
         if (v_axis == 0)
         {
             //Decelerate
             current_movement_speed.y -= Mathf.Sign(current_movement_speed.y) * friction * Time.deltaTime;
-            if (Mathf.Abs(current_movement_speed.y) < 0.5) current_movement_speed.y = 0.0f;
+            if (Mathf.Abs(current_movement_speed.y) <= 1) current_movement_speed.y = 0.0f;
         }
 
-
         transform.Translate(current_movement_speed * Time.deltaTime);
-
-
-
     }
    
 }
