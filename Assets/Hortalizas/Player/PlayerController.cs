@@ -11,12 +11,18 @@ public class PlayerController : MonoBehaviour
     Vector3 current_movement_speed;
 
     int last_axis = 0;
+    
+    //Animations
+    Animator anim;
+    SpriteRenderer renderer;
 
 
     // Start is called before the first frame update
     void Start()
     {
         current_movement_speed = new Vector3(0.0f, 0.0f, 0.0f);
+        anim = GetComponent<Animator>();
+        renderer = GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
@@ -46,7 +52,10 @@ public class PlayerController : MonoBehaviour
         {
             //Decelerate
             current_movement_speed.x -= Mathf.Sign(current_movement_speed.x) * friction * Time.deltaTime;
-            if (Mathf.Abs(current_movement_speed.x) <= 1) current_movement_speed.x = 0.0f;
+            if (Mathf.Abs(current_movement_speed.x) <= 1)
+            {
+                current_movement_speed.x = 0.0f;
+            }
         }
 
         if (v_axis == 0)
@@ -56,7 +65,24 @@ public class PlayerController : MonoBehaviour
             if (Mathf.Abs(current_movement_speed.y) <= 1) current_movement_speed.y = 0.0f;
         }
 
+
+        ManageAnimation();
+
         transform.Translate(current_movement_speed * Time.deltaTime);
     }
    
+    void ManageAnimation()
+    {
+        if (current_movement_speed.x == 0.0f && current_movement_speed.y == 0)
+            anim.SetBool("Moving", false);
+        else
+        {
+
+            if (current_movement_speed.x > 0) renderer.flipX = true;
+            else renderer.flipX = false;
+
+            anim.SetBool("Moving", true);
+        }
+    }
+
 }
