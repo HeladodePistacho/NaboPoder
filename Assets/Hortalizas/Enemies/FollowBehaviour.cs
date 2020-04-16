@@ -6,6 +6,7 @@ public class FollowBehaviour : StateMachineBehaviour
 {
     private Transform playerPos;
     public float speed;
+    public float rangeLost;
 
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
@@ -17,7 +18,8 @@ public class FollowBehaviour : StateMachineBehaviour
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         animator.transform.position = Vector2.MoveTowards(animator.transform.position, playerPos.position, speed*Time.deltaTime);
-        if (Input.GetKeyDown(KeyCode.Space))
+
+        if (Vector3.Distance(playerPos.position, animator.transform.position) >= rangeLost)
         {
             animator.SetBool("isFollowing", false);
         }
