@@ -25,6 +25,9 @@ public class TurnipBehaviour : MonoBehaviour
     //PossibleTargets
     Transform player;
 
+    //Animations
+    public Animator anim;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -40,6 +43,7 @@ public class TurnipBehaviour : MonoBehaviour
          switch (turnipState)
          {
              case TurnipState.IDLE:
+
                  break;
              case TurnipState.WAITING_FOR_PLAYER:
                 Update_WaitingForPlayer();
@@ -52,11 +56,14 @@ public class TurnipBehaviour : MonoBehaviour
     {
         turnipState = TurnipState.FOLLOWING_PLAYER;
         pathfinding.SetTarget(player, OnPlayerReached);
+
+        anim.SetBool("Moving", true);
     }
 
     void OnPlayerReached()
     {
         turnipState = TurnipState.WAITING_FOR_PLAYER;
+        anim.SetBool("Moving", false);
     }
 
     void Update_WaitingForPlayer()
@@ -72,6 +79,7 @@ public class TurnipBehaviour : MonoBehaviour
         turnipState = TurnipState.GOING_TO;
         pathfinding.SetTarget(_targetPos, SetState_FollowPlayer);
 
+        anim.SetBool("Moving", true);
     }
 
     private void OnDrawGizmos()
