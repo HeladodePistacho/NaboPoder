@@ -15,10 +15,10 @@ TagManager:
   - 
   - 
   - Obstacles
-  - Turnips
-  - 
-  - 
-  - 
+  - Turnips_FollowingPlayer
+  - Turnips_GoingTo
+  - Turnips_Idle
+  - Selection
   - 
   - 
   - 

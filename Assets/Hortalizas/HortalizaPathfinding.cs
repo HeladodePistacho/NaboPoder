@@ -43,6 +43,7 @@ public class HortalizaPathfinding : MonoBehaviour
         onReachedEnd = onEnd;
         targetObj = null;
         targetPos = _target;
+        reachedEnd = false;
         InvokeRepeating("UpdatePath", 0f, refreshPathRate);
     }
     public void SetTarget(Transform _target, UnityAction onEnd)
@@ -74,7 +75,6 @@ public class HortalizaPathfinding : MonoBehaviour
             else
               seeker.StartPath(rb.position, targetPos, OnPathGenerationComplete);
         }
-
     }
 
     void OnPathGenerationComplete(Path p)
@@ -123,7 +123,6 @@ public class HortalizaPathfinding : MonoBehaviour
             graphics.localScale = left;
         }
     }
-
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.red;

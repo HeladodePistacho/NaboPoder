@@ -61,6 +61,7 @@ public class TurnipBehaviour : MonoBehaviour
         pathfinding.SetTarget(player, OnPlayerReached);
         Debug.Log("following");
         anim.SetBool("Moving", true);
+        gameObject.layer = LayerMask.NameToLayer("Turnips_FollowingPlayer");
     }
 
     Vector3 previousPosition = Vector3.zero;
@@ -110,6 +111,8 @@ public class TurnipBehaviour : MonoBehaviour
         pathfinding.SetTarget(_targetPos, SetState_FollowPlayer);
 
         anim.SetBool("Moving", true);
+        gameObject.layer = LayerMask.NameToLayer("Turnips_GoingTo");
+
     }
 
     private void OnDrawGizmos()

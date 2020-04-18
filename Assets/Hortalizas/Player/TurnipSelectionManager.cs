@@ -7,6 +7,9 @@ public class TurnipSelectionManager : MonoBehaviour
     List<GameObject> selectedTurnips;
     Camera main;
 
+    public LayerMask layerForPoint;
+    public LayerMask layerForSquare;
+
     //The start and end coordinates of the square we are making
     Vector3 squareStartPos;
     Vector3 squareEndPos;
@@ -16,7 +19,7 @@ public class TurnipSelectionManager : MonoBehaviour
     Vector3 TL, TR, BL, BR;
 
     public RectTransform selectionSquareTrans;
-
+    Vector3 selectedPosition = Vector3.zero;
 
     void Start()
     {
@@ -55,14 +58,15 @@ public class TurnipSelectionManager : MonoBehaviour
         //Releasing the button
         if (Input.GetMouseButtonUp(0))
         {
-            if (Time.time - clickTime <= delay)
+           if (Time.time - clickTime <= delay)
             {
-               RaycastHit2D hit = Physics2D.Raycast(main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
+                selectedPosition = main.ScreenToWorldPoint(Input.mousePosition);
+               RaycastHit2D hit = Physics2D.Raycast(main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero, 0, layerForPoint);
                 if (hit.collider != null)
                 {
                     if (hit.collider.CompareTag("Turnip"))
                     {
-                        SelectTurnip(hit.collider.gameObject);
+                        SelectTurnip(hit.collider.gameObject.transform.parent.gameObject);
                         return;
                     }
                 }
@@ -91,7 +95,7 @@ public class TurnipSelectionManager : MonoBehaviour
                 Vector2 origin = Vector2.zero;
                 origin = main.ScreenToWorldPoint(selectionSquareTrans.transform.position);
 
-                RaycastHit2D[] hits = Physics2D.BoxCastAll(origin, size, 0, Vector2.zero);
+                RaycastHit2D[] hits = Physics2D.BoxCastAll(origin, size, 0, Vector2.zero, 0, layerForSquare);
 
                 for (int i = 0; i < hits.Length; i++)
                 {
@@ -137,7 +141,7 @@ public class TurnipSelectionManager : MonoBehaviour
     {
         for (int i = 0; i < selectedTurnips.Count; i++)
         {
-            selectedTurnips[i].transform.GetChild(1).gameObject.SetActive(false);
+            selectedTurnips[i].transform.GetChild(2).gameObject.SetActive(false);
         }
         selectedTurnips.Clear();
     }
@@ -145,7 +149,7 @@ public class TurnipSelectionManager : MonoBehaviour
     void SelectTurnip(GameObject turnip)
     {
         selectedTurnips.Add(turnip);
-        turnip.transform.GetChild(1).gameObject.SetActive(true);
+        turnip.transform.GetChild(2).gameObject.SetActive(true);
     }
 
     void SetDestinationForSelected(Vector3 mousePos)
@@ -212,6 +216,12 @@ public class TurnipSelectionManager : MonoBehaviour
         }
 
         hasCreatedSquare = true;
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.green;
+        Gizmos.DrawSphere(selectedPosition, 0.3f);
     }
 
 }
