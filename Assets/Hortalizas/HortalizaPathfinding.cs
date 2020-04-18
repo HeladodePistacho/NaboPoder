@@ -52,6 +52,7 @@ public class HortalizaPathfinding : MonoBehaviour
 
         onReachedEnd = onEnd;
         targetObj = _target;
+        reachedEnd = false;
         InvokeRepeating("UpdatePath", 0f, refreshPathRate);
     }
 
@@ -66,7 +67,7 @@ public class HortalizaPathfinding : MonoBehaviour
 
     void UpdatePath()
     {
-        if (seeker.IsDone())
+        if (reachedEnd == false && seeker.IsDone())
         {
             if(targetObj != null)
               seeker.StartPath(rb.position, targetObj.position, OnPathGenerationComplete);

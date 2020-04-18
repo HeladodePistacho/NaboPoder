@@ -14,6 +14,7 @@ public enum TurnipState
 
 public class TurnipBehaviour : MonoBehaviour
 {
+    public LayerMask layerForWaitingForPlayer;
 
     public float maxDistanceToPlayer = 10f;
 
@@ -48,7 +49,9 @@ public class TurnipBehaviour : MonoBehaviour
              case TurnipState.WAITING_FOR_PLAYER:
                 Update_WaitingForPlayer();
                  break;
-
+            case TurnipState.FOLLOWING_PLAYER:
+                Update_FollowingPlayer();
+                break;
          }
     }
 
@@ -56,12 +59,35 @@ public class TurnipBehaviour : MonoBehaviour
     {
         turnipState = TurnipState.FOLLOWING_PLAYER;
         pathfinding.SetTarget(player, OnPlayerReached);
-
+        Debug.Log("following");
         anim.SetBool("Moving", true);
+    }
+
+    Vector3 previousPosition = Vector3.zero;
+    float timer = 0f;
+    void Update_FollowingPlayer()
+    {
+       /* if(Vector3.SqrMagnitude(previousPosition - transform.position) < 1)
+        {
+            timer += Time.deltaTime;
+        }
+        else
+        {
+            previousPosition = transform.position;
+            timer = 0;
+        }
+
+        if(timer > 0.5)
+        {
+            pathfinding.Stop();
+            timer = 0;
+            Debug.Log("Stop!");
+        }*/
     }
 
     void OnPlayerReached()
     {
+        Debug.Log("reachedPlayer");
         turnipState = TurnipState.WAITING_FOR_PLAYER;
         anim.SetBool("Moving", false);
     }
@@ -70,7 +96,11 @@ public class TurnipBehaviour : MonoBehaviour
     {
         if(Vector3.Distance(transform.position, player.position)> maxDistanceToPlayer)
         {
-            SetState_FollowPlayer();
+            Vector2 direction = player.position - transform.position;
+
+            RaycastHit2D[] hits = Physics2D.RaycastAll(transform.position, direction.normalized, 0.3f, layerForWaitingForPlayer);
+            if(hits.Length <= 1)
+                SetState_FollowPlayer();
         }
     }
 
@@ -87,6 +117,20 @@ public class TurnipBehaviour : MonoBehaviour
         Gizmos.color = Color.blue;
         Gizmos.DrawWireSphere(transform.position, maxDistanceToPlayer);
         Gizmos.color = Color.white;
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(turnipState == TurnipState.FOLLOWING_PLAYER && collision.collider.CompareTag("Turnip"))
+        {
+            TurnipBehaviour tb = collision.gameObject.GetComponent<TurnipBehaviour>();
+            
+            if(tb.turnipState == TurnipState.WAITING_FOR_PLAYER)
+            {
+                Debug.Log("forceStop");
+                pathfinding.Stop();
+            }
+        }
     }
 
 

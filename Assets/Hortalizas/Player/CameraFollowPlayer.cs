@@ -28,7 +28,7 @@ public class CameraFollowPlayer : MonoBehaviour
         new_pos.x = speed * smooth_x;
         new_pos.y = speed * smooth_y;
 
-        Debug.Log(new_pos);
+        //Debug.Log(new_pos);
 
         transform.position = new_pos;
     }

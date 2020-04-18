@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5366197057917704808}
   - component: {fileID: 5987836161850998181}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SelectedMark
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 1218038273}
   - component: {fileID: 2528098163901431458}
   - component: {fileID: 498982821}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Turnip
   m_TagString: Turnip
   m_Icon: {fileID: 0}
@@ -146,8 +146,8 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 1.5
+  m_Mass: 2
+  m_LinearDrag: 10
   m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
@@ -195,7 +195,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2963e905c77d9749959cf82d39a5764, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxDistanceToPlayer: 0.33
+  layerForWaitingForPlayer:
+    serializedVersion: 2
+    m_Bits: 512
+  maxDistanceToPlayer: 0.5
   turnipState: 0
   pathfinding: {fileID: 498982821}
   anim: {fileID: 2625213352798057307}
@@ -229,7 +232,7 @@ GameObject:
   - component: {fileID: 6456965676569181178}
   - component: {fileID: 8701087629755432957}
   - component: {fileID: 2625213352798057307}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: TurnipGFX
   m_TagString: Untagged
   m_Icon: {fileID: 0}

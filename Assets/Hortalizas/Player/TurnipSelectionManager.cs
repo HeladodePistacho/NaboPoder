@@ -57,7 +57,7 @@ public class TurnipSelectionManager : MonoBehaviour
         {
             if (Time.time - clickTime <= delay)
             {
-                RaycastHit2D hit = Physics2D.Raycast(main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
+               RaycastHit2D hit = Physics2D.Raycast(main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
                 if (hit.collider != null)
                 {
                     if (hit.collider.CompareTag("Turnip"))
