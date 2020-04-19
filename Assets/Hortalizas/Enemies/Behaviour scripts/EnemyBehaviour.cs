@@ -84,7 +84,7 @@ public class EnemyBehaviour : MonoBehaviour
     }
     void Update_Idle()
     {
-        if (Vector3.Distance(transform.position, player.position) > enemyStats.sightRange)
+        if (Vector3.Distance(transform.position, player.position) < enemyStats.sightRange)
         {
             SetState_FollowPlayer();
         }
