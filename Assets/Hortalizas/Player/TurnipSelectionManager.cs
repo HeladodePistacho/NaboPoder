@@ -6,7 +6,7 @@ public class TurnipSelectionManager : MonoBehaviour
 {
     List<GameObject> selectedTurnips;
     Camera main;
-
+    public GameObject allTurnips;
     public LayerMask layerForPoint;
     public LayerMask layerForSquare;
 
@@ -58,10 +58,10 @@ public class TurnipSelectionManager : MonoBehaviour
         //Releasing the button
         if (Input.GetMouseButtonUp(0))
         {
-           if (Time.time - clickTime <= delay)
+            if (Time.time - clickTime <= delay)
             {
                 selectedPosition = main.ScreenToWorldPoint(Input.mousePosition);
-               RaycastHit2D hit = Physics2D.Raycast(main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero, 0, layerForPoint);
+                RaycastHit2D hit = Physics2D.Raycast(main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero, 0, layerForPoint);
                 if (hit.collider != null)
                 {
                     if (hit.collider.CompareTag("Turnip"))
@@ -87,7 +87,7 @@ public class TurnipSelectionManager : MonoBehaviour
 
                 Vector2 upCorner = main.ScreenToWorldPoint(corners[1]);
                 Vector2 downCorner = main.ScreenToWorldPoint(corners[3]);
-               
+
                 Vector2 size = downCorner - upCorner;
                 size.x = Mathf.Abs(size.x);
                 size.y = Mathf.Abs(size.y);
@@ -123,6 +123,7 @@ public class TurnipSelectionManager : MonoBehaviour
 
             //Display the selection with a GUI image
             DisplaySquare();
+            return;
         }
 
         if (Input.GetMouseButton(1))
@@ -134,7 +135,11 @@ public class TurnipSelectionManager : MonoBehaviour
             {
                 SetDestinationForSelected(mousePos);
             }
+            return;
         }
+
+        if (Input.GetMouseButtonDown(2))
+            ReturnToPlayer();
     }
 
     void UnselectAll()
@@ -158,6 +163,31 @@ public class TurnipSelectionManager : MonoBehaviour
         {
             selectedTurnips[i].GetComponent<TurnipBehaviour>().SetTargetPosition(mousePos);
         }
+    }
+
+    void ReturnToPlayer()
+    {
+        if (selectedTurnips.Count == 0)
+        {
+            for (int i = 0; i < allTurnips.transform.childCount; i++)
+            {
+               TurnipBehaviour tb = allTurnips.transform.GetChild(i).GetComponent<TurnipBehaviour>();
+                if(tb.turnipState != TurnipState.FOLLOWING_PLAYER && tb.turnipState != TurnipState.WAITING_FOR_PLAYER)
+                {
+                    tb.SetState_FollowPlayer();
+                }
+            }
+        }
+
+        else for (int i = 0; i < selectedTurnips.Count; i++)
+            {
+                TurnipBehaviour tb = selectedTurnips[i].GetComponent<TurnipBehaviour>();
+                if (tb.turnipState != TurnipState.FOLLOWING_PLAYER && tb.turnipState != TurnipState.WAITING_FOR_PLAYER)
+                {
+                    tb.SetState_FollowPlayer();
+                }
+            }
+
     }
 
     void DisplaySquare()

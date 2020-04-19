@@ -43,9 +43,6 @@ public class TurnipBehaviour : MonoBehaviour
     {
          switch (turnipState)
          {
-             case TurnipState.IDLE:
-
-                 break;
              case TurnipState.WAITING_FOR_PLAYER:
                 Update_WaitingForPlayer();
                  break;
@@ -53,13 +50,14 @@ public class TurnipBehaviour : MonoBehaviour
                 Update_FollowingPlayer();
                 break;
          }
+
+        
     }
 
-    void SetState_FollowPlayer()
+    public void SetState_FollowPlayer()
     {
         turnipState = TurnipState.FOLLOWING_PLAYER;
-        pathfinding.SetTarget(player, OnPlayerReached);
-        Debug.Log("following");
+        pathfinding.SetTarget(player, OnPlayerReached);       
         anim.SetBool("Moving", true);
         gameObject.layer = LayerMask.NameToLayer("Turnips_FollowingPlayer");
     }
@@ -88,7 +86,7 @@ public class TurnipBehaviour : MonoBehaviour
 
     void OnPlayerReached()
     {
-        Debug.Log("reachedPlayer");
+       // Debug.Log("reachedPlayer");
         turnipState = TurnipState.WAITING_FOR_PLAYER;
         anim.SetBool("Moving", false);
     }
@@ -108,11 +106,18 @@ public class TurnipBehaviour : MonoBehaviour
     public void SetTargetPosition(Vector3 _targetPos)
     {
         turnipState = TurnipState.GOING_TO;
-        pathfinding.SetTarget(_targetPos, SetState_FollowPlayer);
+        pathfinding.SetTarget(_targetPos, OnTargetPositionReached);
 
         anim.SetBool("Moving", true);
         gameObject.layer = LayerMask.NameToLayer("Turnips_GoingTo");
 
+    }
+
+    void OnTargetPositionReached()
+    {
+        turnipState = TurnipState.IDLE;
+        anim.SetBool("Moving", false);
+        gameObject.layer = LayerMask.NameToLayer("Turnips_Idle");
     }
 
     private void OnDrawGizmos()
@@ -130,7 +135,7 @@ public class TurnipBehaviour : MonoBehaviour
             
             if(tb.turnipState == TurnipState.WAITING_FOR_PLAYER)
             {
-                Debug.Log("forceStop");
+               // Debug.Log("forceStop");
                 pathfinding.Stop();
             }
         }
