@@ -9,8 +9,8 @@ public class EnemyStats : MonoBehaviour
     // Gameplay variables
     public float speed = 0f;
     public float sightRange = 0f;
-    public float hp = 0f;
-    public float damage = 0f;
+    public int hp = 0;
+    public int damage = 0;
 
     public void Start()
     {
