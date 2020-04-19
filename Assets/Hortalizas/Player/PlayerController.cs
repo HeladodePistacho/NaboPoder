@@ -15,7 +15,7 @@ public class PlayerController : MonoBehaviour
     //Animations
     Animator anim;
     SpriteRenderer renderer;
-
+    Rigidbody2D rb;
 
     // Start is called before the first frame update
     void Start()
@@ -23,10 +23,11 @@ public class PlayerController : MonoBehaviour
         current_movement_speed = new Vector3(0.0f, 0.0f, 0.0f);
         anim = GetComponent<Animator>();
         renderer = GetComponent<SpriteRenderer>();
+        rb = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         HandleMovement();
     }
@@ -68,7 +69,7 @@ public class PlayerController : MonoBehaviour
 
         ManageAnimation();
 
-        transform.Translate(current_movement_speed * Time.deltaTime);
+        rb.velocity = current_movement_speed;// transform.Translate(current_movement_speed * Time.deltaTime);
     }
    
     void ManageAnimation()
