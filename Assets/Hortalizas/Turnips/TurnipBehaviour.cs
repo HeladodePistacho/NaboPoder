@@ -34,8 +34,7 @@ public class TurnipBehaviour : MonoBehaviour
     {
         //TODO: search for player
         main = Camera.main;
-        player = GameObject.FindGameObjectWithTag("Player").transform;
-        SetState_FollowPlayer();
+        player = GameObject.FindGameObjectWithTag("Player").transform;        
     }
 
     // Update is called once per frame

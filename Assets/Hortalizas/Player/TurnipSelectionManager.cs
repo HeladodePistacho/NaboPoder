@@ -13,7 +13,7 @@ public class TurnipSelectionManager : MonoBehaviour
     //The start and end coordinates of the square we are making
     Vector3 squareStartPos;
     Vector3 squareEndPos;
-    float delay = 0.1f;
+    float delay = 0.2f;
     bool hasCreatedSquare;
     //The selection squares 4 corner positions
     Vector3 TL, TR, BL, BR;
@@ -67,6 +67,12 @@ public class TurnipSelectionManager : MonoBehaviour
                     if (hit.collider.CompareTag("Turnip"))
                     {
                         SelectTurnip(hit.collider.gameObject.transform.parent.gameObject);
+                        return;
+                    }
+
+                    if(hit.collider.CompareTag("PlantableTile"))
+                    {
+                        ManageTile(hit.collider.gameObject.GetComponent<PlantableTileController>());
                         return;
                     }
                 }
@@ -246,6 +252,18 @@ public class TurnipSelectionManager : MonoBehaviour
         }
 
         hasCreatedSquare = true;
+    }
+
+    void ManageTile(PlantableTileController tileController)
+    {
+        if(tileController.tileState == TileState.PLANTABLE)
+        {
+            tileController.PlantTile();
+        }
+        else if (tileController.tileState == TileState.READY_TO_COLLECT)
+        {
+            tileController.CollectTile();
+        }
     }
 
     private void OnDrawGizmos()
