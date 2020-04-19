@@ -30,7 +30,7 @@ public class PlayerController : MonoBehaviour
     void FixedUpdate()
     {
         HandleMovement();
-    }
+    }  
 
     void HandleMovement()
     {

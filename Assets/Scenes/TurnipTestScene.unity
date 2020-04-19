@@ -334,7 +334,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &80134999
 Transform:
   m_ObjectHideFlags: 0
@@ -6492,16 +6492,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 6918770935354224932, guid: c0ac2c5de0e309e46b55c3f04345143f,
-        type: 3}
-      propertyPath: max_move_speed
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6918770935354224932, guid: c0ac2c5de0e309e46b55c3f04345143f,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
+    - target: {fileID: 2051488770, guid: c0ac2c5de0e309e46b55c3f04345143f, type: 3}
+      propertyPath: allTurnips
+      value: 
+      objectReference: {fileID: 80134998}
+    - target: {fileID: 2051488770, guid: c0ac2c5de0e309e46b55c3f04345143f, type: 3}
+      propertyPath: selectionSquareTrans
+      value: 
+      objectReference: {fileID: 861451527}
     - target: {fileID: 6918770935354224935, guid: c0ac2c5de0e309e46b55c3f04345143f,
         type: 3}
       propertyPath: m_Name
@@ -11110,63 +11108,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1222915873}
   m_PrefabAsset: {fileID: 0}
---- !u!50 &2051488768
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2051488763}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 10000
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 4
---- !u!58 &2051488769
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2051488763}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.08
---- !u!114 &2051488770
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2051488763}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 24d3bbdcb205848479aaca8e089f2a6a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  allTurnips: {fileID: 80134998}
-  layerForPoint:
-    serializedVersion: 2
-    m_Bits: 4096
-  layerForSquare:
-    serializedVersion: 2
-    m_Bits: 3895
-  selectionSquareTrans: {fileID: 861451527}
 --- !u!1001 &2053448734
 PrefabInstance:
   m_ObjectHideFlags: 0

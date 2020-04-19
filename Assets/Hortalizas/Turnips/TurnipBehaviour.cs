@@ -66,7 +66,7 @@ public class TurnipBehaviour : MonoBehaviour
     float timer = 0f;
     void Update_FollowingPlayer()
     {
-       /* if(Vector3.SqrMagnitude(previousPosition - transform.position) < 1)
+      /*  if(Vector3.SqrMagnitude(previousPosition - transform.position) < 1)
         {
             timer += Time.deltaTime;
         }

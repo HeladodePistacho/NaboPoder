@@ -2595,7 +2595,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 017f16c531c12e84199ca49b4fddf234, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
+  player: {fileID: 1598320824}
   speed: 1
   smooth_speed: 5
 --- !u!1 &1009123856
@@ -2804,6 +2804,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6918770935354224932, guid: c0ac2c5de0e309e46b55c3f04345143f,
+        type: 3}
+      propertyPath: movement_acceleration
+      value: 20000
+      objectReference: {fileID: 0}
     - target: {fileID: 6918770935354224935, guid: c0ac2c5de0e309e46b55c3f04345143f,
         type: 3}
       propertyPath: m_Name
@@ -3515,6 +3520,12 @@ MonoBehaviour:
   initPos: {x: 0, y: 0, z: 0}
   speed: 3
   sightRange: 6
+--- !u!1 &1598320824 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6918770935354224935, guid: c0ac2c5de0e309e46b55c3f04345143f,
+    type: 3}
+  m_PrefabInstance: {fileID: 1105556093}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1957657448
 GameObject:
   m_ObjectHideFlags: 0
