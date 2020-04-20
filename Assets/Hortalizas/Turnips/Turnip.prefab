@@ -219,7 +219,7 @@ MonoBehaviour:
   targetPos: {x: 0, y: 0, z: 0}
   acceleration: 2000
   maxSpeed: 1
-  nextWaypointDistance: 0.3
+  nextWaypointDistance: 0.18
   refreshPathRate: 0.5
   graphics: {fileID: 6456965676569181178}
 --- !u!1 &7694576265676709168

@@ -45,9 +45,6 @@ public class TurnipBehaviour : MonoBehaviour
              case TurnipState.WAITING_FOR_PLAYER:
                 Update_WaitingForPlayer();
                  break;
-            case TurnipState.FOLLOWING_PLAYER:
-                Update_FollowingPlayer();
-                break;
          }
 
         
@@ -59,28 +56,6 @@ public class TurnipBehaviour : MonoBehaviour
         pathfinding.SetTarget(player, OnPlayerReached);       
         anim.SetBool("Moving", true);
         gameObject.layer = LayerMask.NameToLayer("Turnips_FollowingPlayer");
-    }
-
-    Vector3 previousPosition = Vector3.zero;
-    float timer = 0f;
-    void Update_FollowingPlayer()
-    {
-      /*  if(Vector3.SqrMagnitude(previousPosition - transform.position) < 1)
-        {
-            timer += Time.deltaTime;
-        }
-        else
-        {
-            previousPosition = transform.position;
-            timer = 0;
-        }
-
-        if(timer > 0.5)
-        {
-            pathfinding.Stop();
-            timer = 0;
-            Debug.Log("Stop!");
-        }*/
     }
 
     void OnPlayerReached()
@@ -115,7 +90,7 @@ public class TurnipBehaviour : MonoBehaviour
     public void SetTarget(Transform _target)
     {
         turnipState = TurnipState.GOING_TO;
-        pathfinding.SetTarget(_target, OnTargetPositionReached);
+        pathfinding.SetTarget(_target, SetState_FollowPlayer);
 
         anim.SetBool("Moving", true);
         gameObject.layer = LayerMask.NameToLayer("Turnips_GoingTo");

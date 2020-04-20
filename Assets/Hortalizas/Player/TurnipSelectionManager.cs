@@ -21,6 +21,8 @@ public class TurnipSelectionManager : MonoBehaviour
     public RectTransform selectionSquareTrans;
     Vector3 selectedPosition = Vector3.zero;
 
+    Transform selectedTarget;
+
     void Start()
     {
         selectedTurnips = new List<GameObject>();
@@ -35,6 +37,19 @@ public class TurnipSelectionManager : MonoBehaviour
         //Are we clicking with left mouse or holding down left mouse
         bool isClicking = false;
         bool isHoldingDown = false;
+
+        Vector3 mousePos = main.ScreenToWorldPoint(Input.mousePosition);
+        RaycastHit2D hit = Physics2D.Raycast(mousePos, Vector2.zero, 0, layerForPoint);
+        if (hit.collider != null && hit.collider.CompareTag("Enemy"))
+        {
+            selectedTarget = hit.transform;
+            selectedTarget.GetChild(2).gameObject.SetActive(true);
+        }
+        else if (selectedTarget != null)
+        {
+            selectedTarget.GetChild(2).gameObject.SetActive(false);
+            selectedTarget = null;
+        }
 
         //GetFirstDown
         if (Input.GetMouseButtonDown(0))
@@ -61,7 +76,7 @@ public class TurnipSelectionManager : MonoBehaviour
             if (Time.time - clickTime <= delay)
             {
                 selectedPosition = main.ScreenToWorldPoint(Input.mousePosition);
-                RaycastHit2D hit = Physics2D.Raycast(main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero, 0, layerForPoint);
+                hit = Physics2D.Raycast(main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero, 0, layerForPoint);
                 if (hit.collider != null)
                 {
                     if (hit.collider.CompareTag("Turnip"))
@@ -70,7 +85,7 @@ public class TurnipSelectionManager : MonoBehaviour
                         return;
                     }
 
-                    if(hit.collider.CompareTag("PlantableTile"))
+                    if (hit.collider.CompareTag("PlantableTile"))
                     {
                         ManageTile(hit.collider.gameObject.GetComponent<PlantableTileController>());
                         return;
@@ -134,8 +149,8 @@ public class TurnipSelectionManager : MonoBehaviour
 
         if (Input.GetMouseButton(1))
         {
-            Vector3 mousePos = main.ScreenToWorldPoint(Input.mousePosition);
-            RaycastHit2D hit = Physics2D.Raycast(mousePos, Vector2.zero);
+            mousePos = main.ScreenToWorldPoint(Input.mousePosition);
+            hit = Physics2D.Raycast(mousePos, Vector2.zero);
 
             if (hit.collider == null)
             {
@@ -146,7 +161,7 @@ public class TurnipSelectionManager : MonoBehaviour
                 }
             }
 
-           else if(hit.collider.CompareTag("Enemy"))
+            else if (hit.collider.CompareTag("Enemy"))
             {
                 SetDestinationForSelected(hit.collider.transform);
                 return;
@@ -200,8 +215,8 @@ public class TurnipSelectionManager : MonoBehaviour
         {
             for (int i = 0; i < allTurnips.transform.childCount; i++)
             {
-               TurnipBehaviour tb = allTurnips.transform.GetChild(i).GetComponent<TurnipBehaviour>();
-                if(tb.turnipState != TurnipState.FOLLOWING_PLAYER && tb.turnipState != TurnipState.WAITING_FOR_PLAYER)
+                TurnipBehaviour tb = allTurnips.transform.GetChild(i).GetComponent<TurnipBehaviour>();
+                if (tb.turnipState != TurnipState.FOLLOWING_PLAYER && tb.turnipState != TurnipState.WAITING_FOR_PLAYER)
                 {
                     tb.SetState_FollowPlayer();
                 }
@@ -281,7 +296,7 @@ public class TurnipSelectionManager : MonoBehaviour
 
     void ManageTile(PlantableTileController tileController)
     {
-        if(tileController.tileState == TileState.PLANTABLE)
+        if (tileController.tileState == TileState.PLANTABLE)
         {
             tileController.PlantTile();
         }

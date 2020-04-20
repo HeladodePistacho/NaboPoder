@@ -299,8 +299,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   initPos: {x: 0, y: 0, z: 0}
   speed: 1
-  sightRange: 2.5
-  hp: 1
+  sightRange: 1.88
+  hp: 3
   damage: 5
   lifebarUI: {fileID: 6953103560130196719}
 --- !u!1 &3939434024679500580
@@ -596,13 +596,13 @@ GameObject:
   m_Component:
   - component: {fileID: 8982239216753653200}
   - component: {fileID: 1135919021141974866}
-  m_Layer: 13
+  m_Layer: 12
   m_Name: EnemySelectionCollider
-  m_TagString: Turnip
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_StaticEditorFlags: 4294967295
+  m_IsActive: 1
 --- !u!4 &8982239216753653200
 Transform:
   m_ObjectHideFlags: 0
@@ -632,4 +632,4 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.58118033
+  m_Radius: 0.43933108
