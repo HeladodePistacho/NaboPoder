@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 public class EnemyStats : MonoBehaviour
 {
     [HideInInspector]
@@ -10,16 +10,38 @@ public class EnemyStats : MonoBehaviour
     public float speed = 0f;
     public float sightRange = 0f;
     public int hp = 0;
+    int initialHP;
     public int damage = 0;
 
-    public void Start()
+    public Image lifebarUI; 
+    void Start()
     {
+        initialHP = hp;
         initPos = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y, gameObject.transform.position.z);
     }
 
+    void Update()
+    {
+        if(hp <= 0)
+        {
+            Destroy(gameObject);
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.collider.CompareTag("Turnip"))
+        {
+            //Todo: hacer que el enemigo recule
+            hp--;
+            lifebarUI.fillAmount = (1 / (float)initialHP) * (float)hp;
+        }
+    }
+
+
     private void OnDrawGizmosSelected()
     {
-        Gizmos.color = Color.red;
+        Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(transform.position, sightRange);
         Gizmos.color = Color.white;
     }

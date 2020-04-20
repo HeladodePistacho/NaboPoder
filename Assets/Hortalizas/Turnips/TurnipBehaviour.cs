@@ -137,7 +137,12 @@ public class TurnipBehaviour : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(turnipState == TurnipState.FOLLOWING_PLAYER && collision.collider.CompareTag("Turnip"))
+        if (collision.collider.CompareTag("Enemy"))
+        {
+            Destroy(gameObject);
+        }
+
+        if (turnipState == TurnipState.FOLLOWING_PLAYER && collision.collider.CompareTag("Turnip"))
         {
             TurnipBehaviour tb = collision.gameObject.GetComponent<TurnipBehaviour>();
             

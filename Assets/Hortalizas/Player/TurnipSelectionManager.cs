@@ -137,13 +137,16 @@ public class TurnipSelectionManager : MonoBehaviour
             Vector3 mousePos = main.ScreenToWorldPoint(Input.mousePosition);
             RaycastHit2D hit = Physics2D.Raycast(mousePos, Vector2.zero);
 
-            if (hit.collider == null && selectedTurnips.Count > 0)
+            if (hit.collider == null)
             {
-                SetDestinationForSelected(mousePos);
-                return;
+                if (selectedTurnips.Count > 0)
+                {
+                    SetDestinationForSelected(mousePos);
+                    return;
+                }
             }
 
-            if(hit.collider.CompareTag("Enemy"))
+           else if(hit.collider.CompareTag("Enemy"))
             {
                 SetDestinationForSelected(hit.collider.transform);
                 return;
@@ -159,6 +162,8 @@ public class TurnipSelectionManager : MonoBehaviour
     {
         for (int i = 0; i < selectedTurnips.Count; i++)
         {
+            if (selectedTurnips[i] == null)
+                continue;
             selectedTurnips[i].transform.GetChild(2).gameObject.SetActive(false);
         }
         selectedTurnips.Clear();
@@ -174,6 +179,8 @@ public class TurnipSelectionManager : MonoBehaviour
     {
         for (int i = 0; i < selectedTurnips.Count; i++)
         {
+            if (selectedTurnips[i] == null)
+                continue;
             selectedTurnips[i].GetComponent<TurnipBehaviour>().SetTargetPosition(mousePos);
         }
     }
@@ -181,6 +188,8 @@ public class TurnipSelectionManager : MonoBehaviour
     {
         for (int i = 0; i < selectedTurnips.Count; i++)
         {
+            if (selectedTurnips[i] == null)
+                continue;
             selectedTurnips[i].GetComponent<TurnipBehaviour>().SetTarget(target);
         }
     }
@@ -201,6 +210,8 @@ public class TurnipSelectionManager : MonoBehaviour
 
         else for (int i = 0; i < selectedTurnips.Count; i++)
             {
+                if (selectedTurnips[i] == null)
+                    continue;
                 TurnipBehaviour tb = selectedTurnips[i].GetComponent<TurnipBehaviour>();
                 if (tb.turnipState != TurnipState.FOLLOWING_PLAYER && tb.turnipState != TurnipState.WAITING_FOR_PLAYER)
                 {
