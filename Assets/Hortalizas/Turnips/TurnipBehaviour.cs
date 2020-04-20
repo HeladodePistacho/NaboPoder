@@ -112,6 +112,15 @@ public class TurnipBehaviour : MonoBehaviour
 
     }
 
+    public void SetTarget(Transform _target)
+    {
+        turnipState = TurnipState.GOING_TO;
+        pathfinding.SetTarget(_target, OnTargetPositionReached);
+
+        anim.SetBool("Moving", true);
+        gameObject.layer = LayerMask.NameToLayer("Turnips_GoingTo");
+    }
+
     void OnTargetPositionReached()
     {
         turnipState = TurnipState.IDLE;

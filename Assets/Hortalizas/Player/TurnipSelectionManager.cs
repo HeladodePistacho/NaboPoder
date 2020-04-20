@@ -140,6 +140,13 @@ public class TurnipSelectionManager : MonoBehaviour
             if (hit.collider == null && selectedTurnips.Count > 0)
             {
                 SetDestinationForSelected(mousePos);
+                return;
+            }
+
+            if(hit.collider.CompareTag("Enemy"))
+            {
+                SetDestinationForSelected(hit.collider.transform);
+                return;
             }
             return;
         }
@@ -168,6 +175,13 @@ public class TurnipSelectionManager : MonoBehaviour
         for (int i = 0; i < selectedTurnips.Count; i++)
         {
             selectedTurnips[i].GetComponent<TurnipBehaviour>().SetTargetPosition(mousePos);
+        }
+    }
+    void SetDestinationForSelected(Transform target)
+    {
+        for (int i = 0; i < selectedTurnips.Count; i++)
+        {
+            selectedTurnips[i].GetComponent<TurnipBehaviour>().SetTarget(target);
         }
     }
 

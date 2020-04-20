@@ -16,4 +16,11 @@ public class EnemyStats : MonoBehaviour
     {
         initPos = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y, gameObject.transform.position.z);
     }
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, sightRange);
+        Gizmos.color = Color.white;
+    }
 }
