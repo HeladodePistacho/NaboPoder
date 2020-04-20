@@ -13,7 +13,7 @@ public class TurnipSelectionManager : MonoBehaviour
     //The start and end coordinates of the square we are making
     Vector3 squareStartPos;
     Vector3 squareEndPos;
-    float delay = 0.2f;
+    float delay = 0.17f;
     bool hasCreatedSquare;
     //The selection squares 4 corner positions
     Vector3 TL, TR, BL, BR;
@@ -21,7 +21,7 @@ public class TurnipSelectionManager : MonoBehaviour
     public RectTransform selectionSquareTrans;
     Vector3 selectedPosition = Vector3.zero;
 
-    Transform selectedTarget;
+    Transform hover;
 
     void Start()
     {
@@ -40,15 +40,32 @@ public class TurnipSelectionManager : MonoBehaviour
 
         Vector3 mousePos = main.ScreenToWorldPoint(Input.mousePosition);
         RaycastHit2D hit = Physics2D.Raycast(mousePos, Vector2.zero, 0, layerForPoint);
-        if (hit.collider != null && hit.collider.CompareTag("Enemy"))
+        if (hit.collider != null)
         {
-            selectedTarget = hit.transform;
-            selectedTarget.GetChild(2).gameObject.SetActive(true);
+            if(hover != null)
+            {
+                hover.GetChild(0).gameObject?.SetActive(false);
+                hover = null;
+            }
+
+            GameObject selectionMark = hit.transform.GetChild(0).gameObject;
+
+            TurnipBehaviour tb = hit.transform.GetComponent<TurnipBehaviour>();
+            if (tb == null || tb.selected == false)
+            {
+                selectionMark.SetActive(true);
+                hover = hit.transform;
+                Debug.Log("Hover");
+            }
+
+
         }
-        else if (selectedTarget != null)
+        else if (hover != null)
         {
-            selectedTarget.GetChild(2).gameObject.SetActive(false);
-            selectedTarget = null;
+            Debug.Log("StopHover");
+            hover.GetChild(0).gameObject?.SetActive(false);
+            hover = null;
+
         }
 
         //GetFirstDown
@@ -75,19 +92,18 @@ public class TurnipSelectionManager : MonoBehaviour
         {
             if (Time.time - clickTime <= delay)
             {
-                selectedPosition = main.ScreenToWorldPoint(Input.mousePosition);
-                hit = Physics2D.Raycast(main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero, 0, layerForPoint);
-                if (hit.collider != null)
+                if (hover != null)
                 {
-                    if (hit.collider.CompareTag("Turnip"))
+                    if (hover.CompareTag("Turnip"))
                     {
-                        SelectTurnip(hit.collider.gameObject.transform.parent.gameObject);
+                        SelectTurnip(hover.gameObject);
+
                         return;
                     }
 
-                    if (hit.collider.CompareTag("PlantableTile"))
+                    if (hover.CompareTag("PlantableTile"))
                     {
-                        ManageTile(hit.collider.gameObject.GetComponent<PlantableTileController>());
+                        ManageTile(hover.gameObject.GetComponent<PlantableTileController>());
                         return;
                     }
                 }
@@ -129,7 +145,6 @@ public class TurnipSelectionManager : MonoBehaviour
             }
         }
 
-
         //Drag the mouse to select all units within the square
         if (isHoldingDown)
         {
@@ -149,6 +164,12 @@ public class TurnipSelectionManager : MonoBehaviour
 
         if (Input.GetMouseButton(1))
         {
+            if(hover && hover.CompareTag("Enemy"))
+            {
+                SetDestinationForSelected(hit.collider.transform);
+                return;
+            }
+
             mousePos = main.ScreenToWorldPoint(Input.mousePosition);
             hit = Physics2D.Raycast(mousePos, Vector2.zero);
 
@@ -161,11 +182,6 @@ public class TurnipSelectionManager : MonoBehaviour
                 }
             }
 
-            else if (hit.collider.CompareTag("Enemy"))
-            {
-                SetDestinationForSelected(hit.collider.transform);
-                return;
-            }
             return;
         }
 
@@ -179,7 +195,8 @@ public class TurnipSelectionManager : MonoBehaviour
         {
             if (selectedTurnips[i] == null)
                 continue;
-            selectedTurnips[i].transform.GetChild(2).gameObject.SetActive(false);
+            selectedTurnips[i].transform.GetChild(0).gameObject.SetActive(false);
+            selectedTurnips[i].GetComponent<TurnipBehaviour>().selected = false;
         }
         selectedTurnips.Clear();
     }
@@ -187,7 +204,9 @@ public class TurnipSelectionManager : MonoBehaviour
     void SelectTurnip(GameObject turnip)
     {
         selectedTurnips.Add(turnip);
-        turnip.transform.GetChild(2).gameObject.SetActive(true);
+        turnip.transform.GetChild(0).gameObject.SetActive(true);
+        turnip.GetComponent<TurnipBehaviour>().selected = true;
+        hover = null;
     }
 
     void SetDestinationForSelected(Vector3 mousePos)
@@ -304,6 +323,9 @@ public class TurnipSelectionManager : MonoBehaviour
         {
             tileController.CollectTile();
         }
+
+        hover.GetChild(0).gameObject?.SetActive(false);
+        hover = null;
     }
 
     private void OnDrawGizmos()

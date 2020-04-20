@@ -28,6 +28,7 @@ public class TurnipBehaviour : MonoBehaviour
 
     //Animations
     public Animator anim;
+    public bool selected = false;
 
     // Start is called before the first frame update
     void Start()

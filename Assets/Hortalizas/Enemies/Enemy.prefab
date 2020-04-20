@@ -179,9 +179,9 @@ Transform:
   m_LocalPosition: {x: -3.4412, y: 0.992, z: 0}
   m_LocalScale: {x: 0.700348, y: 0.700348, z: 0.700348}
   m_Children:
+  - {fileID: 8410093269366868112}
   - {fileID: 7446113321706711298}
   - {fileID: 8982239216753653200}
-  - {fileID: 8410093269366868112}
   - {fileID: 3537236278746812582}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -332,7 +332,7 @@ Transform:
   m_LocalScale: {x: 1.7375, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2151510529204759645}
-  m_RootOrder: 2
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &7914858419657879389
 SpriteRenderer:
@@ -514,7 +514,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2151510529204759645}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &5048061940177595653
 SpriteRenderer:
@@ -598,7 +598,7 @@ GameObject:
   - component: {fileID: 1135919021141974866}
   m_Layer: 12
   m_Name: EnemySelectionCollider
-  m_TagString: Enemy
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -615,7 +615,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2151510529204759645}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!58 &1135919021141974866
 CircleCollider2D:
@@ -632,4 +632,4 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.43933108
+  m_Radius: 0.57986903
