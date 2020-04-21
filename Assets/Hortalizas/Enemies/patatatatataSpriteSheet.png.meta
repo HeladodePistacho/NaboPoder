@@ -1,0 +1,541 @@
+fileFormatVersion: 2
+guid: 834323efae741d64f870d66e7b956328
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -6016152624992136646
+    second: patatatatataSpriteSheet_0
+  - first:
+      213: -4089156641048579982
+    second: patatatatataSpriteSheet_1
+  - first:
+      213: -3778575060572664298
+    second: patatatatataSpriteSheet_2
+  - first:
+      213: 7251855973930099422
+    second: patatatatataSpriteSheet_3
+  - first:
+      213: 7171070223772133946
+    second: patatatatataSpriteSheet_4
+  - first:
+      213: -6189346342311744253
+    second: patatatatataSpriteSheet_5
+  - first:
+      213: -7018698185192630176
+    second: patatatatataSpriteSheet_6
+  - first:
+      213: 1635634164277739191
+    second: patatatatataSpriteSheet_7
+  - first:
+      213: 7363601237243730431
+    second: patatatatataSpriteSheet_8
+  - first:
+      213: -2067791187726481490
+    second: patatatatataSpriteSheet_9
+  - first:
+      213: 6374708388833027098
+    second: patatatatataSpriteSheet_10
+  - first:
+      213: 7702382939240594621
+    second: patatatatataSpriteSheet_11
+  - first:
+      213: 1714926334526945552
+    second: patatatatataSpriteSheet_12
+  - first:
+      213: -8225713600163258859
+    second: patatatatataSpriteSheet_13
+  - first:
+      213: 1999835026952879817
+    second: patatatatataSpriteSheet_14
+  - first:
+      213: 300227183775126102
+    second: patatatatataSpriteSheet_15
+  - first:
+      213: 6070413481080019481
+    second: patatatatataSpriteSheet_16
+  - first:
+      213: 5686142755541158510
+    second: patatatatataSpriteSheet_17
+  - first:
+      213: -7593563705773850006
+    second: patatatatataSpriteSheet_18
+  - first:
+      213: 3863102078990760110
+    second: patatatatataSpriteSheet_19
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 64
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: patatatatataSpriteSheet_1
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 81
+        width: 59
+        height: 80
+      alignment: 9
+      pivot: {x: 0.6, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 270be5343b56047c0800000000000000
+      internalID: -4089156641048579982
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: patatatatataSpriteSheet_2
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 81
+        width: 59
+        height: 80
+      alignment: 9
+      pivot: {x: 0.6, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 61e8a6d800ecf8bc0800000000000000
+      internalID: -3778575060572664298
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: patatatatataSpriteSheet_3
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 81
+        width: 59
+        height: 80
+      alignment: 9
+      pivot: {x: 0.6, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed2e5681694c3a460800000000000000
+      internalID: 7251855973930099422
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: patatatatataSpriteSheet_4
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 81
+        width: 59
+        height: 80
+      alignment: 9
+      pivot: {x: 0.6, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3aa153ef52c48360800000000000000
+      internalID: 7171070223772133946
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: patatatatataSpriteSheet_5
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 81
+        width: 59
+        height: 80
+      alignment: 9
+      pivot: {x: 0.6, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 30d25a25b460b1aa0800000000000000
+      internalID: -6189346342311744253
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: patatatatataSpriteSheet_6
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 81
+        width: 59
+        height: 80
+      alignment: 9
+      pivot: {x: 0.6, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0681aedef23989e90800000000000000
+      internalID: -7018698185192630176
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: patatatatataSpriteSheet_7
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 81
+        width: 59
+        height: 80
+      alignment: 9
+      pivot: {x: 0.6, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7be74404b90f2b610800000000000000
+      internalID: 1635634164277739191
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: patatatatataSpriteSheet_8
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 81
+        width: 59
+        height: 80
+      alignment: 9
+      pivot: {x: 0.6, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff91a8daf44c03660800000000000000
+      internalID: 7363601237243730431
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: patatatatataSpriteSheet_9
+      rect:
+        serializedVersion: 2
+        x: 540
+        y: 81
+        width: 59
+        height: 80
+      alignment: 9
+      pivot: {x: 0.6, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea741e1dedabd43e0800000000000000
+      internalID: -2067791187726481490
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: patatatatataSpriteSheet_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 59
+        height: 80
+      alignment: 9
+      pivot: {x: 0.6, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a1468174183877850800000000000000
+      internalID: 6374708388833027098
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: patatatatataSpriteSheet_11
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 0
+        width: 59
+        height: 80
+      alignment: 9
+      pivot: {x: 0.6, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dbcf679697c54ea60800000000000000
+      internalID: 7702382939240594621
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: patatatatataSpriteSheet_12
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 0
+        width: 59
+        height: 80
+      alignment: 9
+      pivot: {x: 0.6, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 019f0794a64acc710800000000000000
+      internalID: 1714926334526945552
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: patatatatataSpriteSheet_13
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 0
+        width: 59
+        height: 80
+      alignment: 9
+      pivot: {x: 0.6, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 51e5b26ff0568dd80800000000000000
+      internalID: -8225713600163258859
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: patatatatataSpriteSheet_14
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 0
+        width: 59
+        height: 80
+      alignment: 9
+      pivot: {x: 0.6, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9cef8e68c57d0cb10800000000000000
+      internalID: 1999835026952879817
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: patatatatataSpriteSheet_16
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 0
+        width: 59
+        height: 80
+      alignment: 9
+      pivot: {x: 0.6, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 91a548b06e07e3450800000000000000
+      internalID: 6070413481080019481
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: patatatatataSpriteSheet_17
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 0
+        width: 59
+        height: 80
+      alignment: 9
+      pivot: {x: 0.6, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e6a013ea5bc39ee40800000000000000
+      internalID: 5686142755541158510
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: patatatatataSpriteSheet_18
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 0
+        width: 59
+        height: 80
+      alignment: 9
+      pivot: {x: 0.6, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a620d02ca0e3e9690800000000000000
+      internalID: -7593563705773850006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: patatatatataSpriteSheet_19
+      rect:
+        serializedVersion: 2
+        x: 540
+        y: 0
+        width: 59
+        height: 80
+      alignment: 9
+      pivot: {x: 0.6, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea8315d8fde7c9530800000000000000
+      internalID: 3863102078990760110
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
