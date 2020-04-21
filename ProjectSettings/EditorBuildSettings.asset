@@ -8,4 +8,19 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/Serious scenes/DeadScene.unity
+    guid: 196612900c2a26b42a6526938377924b
+  - enabled: 1
+    path: Assets/Scenes/Serious scenes/InGame.unity
+    guid: 21f5dce027eb0cb41a6e8f73f02bf08f
+  - enabled: 1
+    path: Assets/Scenes/Serious scenes/LoadScene.unity
+    guid: 020483f1122448941a1be8d5163a5d21
+  - enabled: 1
+    path: Assets/Scenes/Serious scenes/Menu.unity
+    guid: 0030b67eedd1b094d85d3a06f93a2097
+  - enabled: 1
+    path: Assets/Scenes/Serious scenes/NexusDeadScene.unity
+    guid: 767272679ca35114d881e42d91af3e89
   m_configObjects: {}

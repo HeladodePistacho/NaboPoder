@@ -6,10 +6,14 @@ using TMPro;
 public class PlayerStats : MonoBehaviour
 {
     // Variables
+    [Header("Player variables")]
     public int life = 10;
     public int nabos = 0;
     public int seeds = 0;
     public bool dead = false;
+    [Header("Scene manager")]
+    public SceneHandler sceneHandler;
+    [Header("UI stuff")]
     public TextMeshProUGUI UIhp;
     public TextMeshProUGUI UIturnips;
     public TextMeshProUGUI UIseeds;
@@ -81,7 +85,7 @@ public class PlayerStats : MonoBehaviour
     {
         // Kill player
         // Show dead msg
-
+        sceneHandler.GoToDeadScene();
         // Restart game
         //SceneHandler.GetInstance().GotoInGame();
     }
