@@ -3945,5 +3945,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: AllahuAkbarEnemy
       objectReference: {fileID: 0}
+    - target: {fileID: 9093334523080485825, guid: ebc3e6602b4c8f647826afb6b141f4ab,
+        type: 3}
+      propertyPath: damage
+      value: 74
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ebc3e6602b4c8f647826afb6b141f4ab, type: 3}

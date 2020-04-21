@@ -41,6 +41,7 @@ public class EnemyStats : MonoBehaviour
         }
         else if (collision.collider.CompareTag("Nexus"))
         {
+            GameObject.FindGameObjectWithTag("Nexus").GetComponent<NexusStats>().hp -= damage;
             hp = 0;
         }
     }

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4512007843382555623}
   - component: {fileID: 4512007843382555640}
   - component: {fileID: 4512007843382555641}
+  - component: {fileID: -5287893483571813847}
   m_Layer: 0
   m_Name: Nexus
   m_TagString: Nexus
@@ -98,3 +99,15 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.099999994
+--- !u!114 &-5287893483571813847
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4512007843382555642}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46680781f1ff9cd4d96bad3bd40d1b58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

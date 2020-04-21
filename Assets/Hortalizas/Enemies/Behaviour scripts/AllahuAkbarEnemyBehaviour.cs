@@ -20,12 +20,13 @@ public class AllahuAkbarEnemyBehaviour : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        pathfinding.SetTarget(nexusPos, MagicMethod);
+        pathfinding.SetTarget(nexusPos, AttackNexus);
         anim.SetBool("Moving", true);
     }
 
-    void MagicMethod()
+    void AttackNexus()
     {
+        // Deprecated but needed to SetTarget method
         return;
     }
 }
