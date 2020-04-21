@@ -10,9 +10,7 @@ public enum TileState
 }
 public class PlantableTileController : MonoBehaviour
 {
-    public Color plantableColor;
-    public Color plantedColor;
-    public Color readyColor;
+     Animator anim;
 
    public TileState tileState = TileState.PLANTABLE;
     public float timeUntilReady = 2f;
@@ -24,12 +22,12 @@ public class PlantableTileController : MonoBehaviour
     private void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
-        spriteRenderer.color = plantableColor;
+        anim = GetComponent<Animator>();
     }
     public void PlantTile()
     {
         tileState = TileState.PLANTED;
-        spriteRenderer.color = plantedColor;
+        anim.SetInteger("TileState", 1);
         StartCoroutine(Wait());
     }
 
@@ -38,13 +36,13 @@ public class PlantableTileController : MonoBehaviour
         yield return new WaitForSeconds(timeUntilReady);
 
         tileState = TileState.READY_TO_COLLECT;
-        spriteRenderer.color = readyColor;
+        anim.SetInteger("TileState", 2);
     }
 
     public void CollectTile()
     {
         tileState = TileState.PLANTABLE;
-        spriteRenderer.color = plantableColor;
+        anim.SetInteger("TileState", 0);
         Instantiate<GameObject>(turnipPrefab, transform.position, Quaternion.identity, allTurnips);
     }
 }
