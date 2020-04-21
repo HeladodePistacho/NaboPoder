@@ -85,7 +85,7 @@ public class EnemyBehaviour : MonoBehaviour
     }
     void Update_BackToInitialPos()
     {
-        if (Vector3.Distance(transform.position, player.position) < enemyStats.sightRange)
+        if (Vector3.Distance(transform.position, player.position) < enemyStats.loseSightRange)
         {
             SetState_FollowPlayer();
         }

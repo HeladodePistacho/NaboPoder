@@ -5,8 +5,12 @@ using UnityEngine;
 public class NexusStats : MonoBehaviour
 {
     public int hp = 20;
-    public SceneHandler sceneHandler;
+    private SceneHandler sceneHandler;
 
+    private void Start()
+    {
+        sceneHandler = GameObject.FindGameObjectWithTag("SceneHandler").GetComponent<SceneHandler>();
+    }
     void Update()
     {
         if(hp <= 0)
