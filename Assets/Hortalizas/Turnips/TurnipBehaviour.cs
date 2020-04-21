@@ -28,7 +28,9 @@ public class TurnipBehaviour : MonoBehaviour
 
     //Animations
     public Animator anim;
+    [HideInInspector]
     public bool selected = false;
+    public GameObject deadParticles;
 
     // Start is called before the first frame update
     void Start()
@@ -116,6 +118,8 @@ public class TurnipBehaviour : MonoBehaviour
         if (collision.collider.CompareTag("Enemy"))
         {
             Destroy(gameObject);
+            GameObject p = Instantiate(deadParticles, gameObject.transform.position, gameObject.transform.rotation);
+            Destroy(p, 3);
         }
 
         if (turnipState == TurnipState.FOLLOWING_PLAYER && collision.collider.CompareTag("Turnip"))

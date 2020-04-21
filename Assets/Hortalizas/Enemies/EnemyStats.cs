@@ -12,6 +12,7 @@ public class EnemyStats : MonoBehaviour
     public int hp = 0;
     int initialHP;
     public int damage = 0;
+    public GameObject deadParticles;
 
     public Image lifebarUI; 
     void Start()
@@ -25,6 +26,8 @@ public class EnemyStats : MonoBehaviour
         if(hp <= 0)
         {
             Destroy(gameObject);
+            GameObject p = Instantiate(deadParticles, gameObject.transform.position, gameObject.transform.rotation);
+            Destroy(p, 3);
         }
     }
 

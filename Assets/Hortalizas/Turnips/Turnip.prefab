@@ -203,6 +203,9 @@ MonoBehaviour:
   turnipState: 0
   pathfinding: {fileID: 498982821}
   anim: {fileID: 2625213352798057307}
+  selected: 0
+  deadParticles: {fileID: 1038737630018656925, guid: 7a31366b62e6a7e4e9a3dd714c533a6e,
+    type: 3}
 --- !u!114 &498982821
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -219,7 +222,7 @@ MonoBehaviour:
   targetPos: {x: 0, y: 0, z: 0}
   acceleration: 2000
   maxSpeed: 1
-  nextWaypointDistance: 0.18
+  nextWaypointDistance: 0.11
   refreshPathRate: 0.5
   graphics: {fileID: 6456965676569181178}
 --- !u!1 &7694576265676709168

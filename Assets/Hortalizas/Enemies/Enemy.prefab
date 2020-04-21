@@ -302,6 +302,8 @@ MonoBehaviour:
   sightRange: 1.88
   hp: 3
   damage: 5
+  deadParticles: {fileID: 1038737630018656925, guid: 4fce010b54de1c04abd8a9110cac602a,
+    type: 3}
   lifebarUI: {fileID: 6953103560130196719}
 --- !u!1 &3939434024679500580
 GameObject:
