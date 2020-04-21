@@ -57,6 +57,6 @@ public class SceneHandler : MonoBehaviour
     // Load saved scene
     private void LoadingScene()
     {
-        SceneManager.LoadScene(sceneToLoad);
+        SceneManager.LoadScene("LoadScene");
     }
 }

@@ -21,7 +21,7 @@ public class MenuHandler : MonoBehaviour
 
     private void Start()
     {
-        sceneHandler = GetComponent<SceneHandler>();
+        sceneHandler = GameObject.FindGameObjectWithTag("SceneHandler").GetComponent<SceneHandler>();
         timeLerp = 0f;
         StartCoroutine(FadeText());
     }

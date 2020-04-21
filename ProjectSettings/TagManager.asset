@@ -8,6 +8,7 @@ TagManager:
   - PlantableTile
   - Enemy
   - Nexus
+  - SceneHandler
   layers:
   - Default
   - TransparentFX
