@@ -39,6 +39,10 @@ public class EnemyStats : MonoBehaviour
             hp--;
             lifebarUI.fillAmount = (1 / (float)initialHP) * (float)hp;
         }
+        else if (collision.collider.CompareTag("Nexus"))
+        {
+            hp = 0;
+        }
     }
 
 
