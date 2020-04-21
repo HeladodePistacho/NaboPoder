@@ -93,6 +93,7 @@ GameObject:
   - component: {fileID: 1012193951755606230}
   - component: {fileID: 296143912542978156}
   - component: {fileID: 3147696819075258271}
+  - component: {fileID: -611811542820625626}
   m_Layer: 12
   m_Name: PlantableTile
   m_TagString: PlantableTile
@@ -154,8 +155,9 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -1
-  m_Sprite: {fileID: 10911, guid: 0000000000000000f000000000000000, type: 0}
-  m_Color: {r: 1, g: 0.6324959, b: 0, a: 1}
+  m_Sprite: {fileID: 5713881430901850362, guid: d3fbc2e0d27c66f46953cc9620befbab,
+    type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -180,9 +182,9 @@ BoxCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
-    border: {x: 0.049999997, y: 0.049999997, z: 0.049999997, w: 0.049999997}
+    border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.16, y: 0.16}
+    oldSize: {x: 0.3125, y: 0.3125}
     newSize: {x: 0.16, y: 0.16}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -203,7 +205,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8668a1dc8c64424281b21b230ea4d64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  plantableColor: {r: 1, g: 0.6313726, b: 0, a: 1}
+  plantableColor: {r: 1, g: 1, b: 1, a: 1}
   plantedColor: {r: 0.5377358, g: 0.34180623, b: 0.07863118, a: 1}
   readyColor: {r: 1, g: 0, b: 0.99701786, a: 1}
   tileState: 0
@@ -211,3 +213,22 @@ MonoBehaviour:
   turnipPrefab: {fileID: 2528098163901431457, guid: 5f415a8b72ba74548928560c895eeab9,
     type: 3}
   allTurnips: {fileID: 0}
+--- !u!95 &-611811542820625626
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8853765606079648119}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 59e5005b7ac53c243837d37ad3ca3134, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

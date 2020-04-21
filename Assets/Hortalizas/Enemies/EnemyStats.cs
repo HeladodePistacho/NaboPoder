@@ -9,6 +9,7 @@ public class EnemyStats : MonoBehaviour
     // Gameplay variables
     public float speed = 0f;
     public float sightRange = 0f;
+    public float loseSightRange = 4f;
     public int hp = 0;
     int initialHP;
     public int damage = 0;
@@ -38,6 +39,11 @@ public class EnemyStats : MonoBehaviour
             //Todo: hacer que el enemigo recule
             hp--;
             lifebarUI.fillAmount = (1 / (float)initialHP) * (float)hp;
+        }
+        else if (collision.collider.CompareTag("Nexus"))
+        {
+            GameObject.FindGameObjectWithTag("Nexus").GetComponent<NexusStats>().hp -= damage;
+            hp = 0;
         }
     }
 

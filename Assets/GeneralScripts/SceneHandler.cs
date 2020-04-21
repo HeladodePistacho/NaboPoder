@@ -44,10 +44,19 @@ public class SceneHandler : MonoBehaviour
         sceneToLoad = "InGame";
         LoadingScene();
     }
-
+    public void GoToDeadScene()
+    {
+        sceneToLoad = "DeadScene";
+        LoadingScene();
+    }
+    public void GoToNexusDeadScene()
+    {
+        sceneToLoad = "NexusDeadScene";
+        LoadingScene();
+    }
     // Load saved scene
     private void LoadingScene()
     {
-        SceneManager.LoadScene(sceneToLoad);
+        SceneManager.LoadScene("LoadScene");
     }
 }
