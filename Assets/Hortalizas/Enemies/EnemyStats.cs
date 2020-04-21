@@ -15,7 +15,8 @@ public class EnemyStats : MonoBehaviour
     public int damage = 0;
     public GameObject deadParticles;
 
-    public Image lifebarUI; 
+    public Image lifebarUI;
+    
     void Start()
     {
         initialHP = hp;
@@ -24,7 +25,7 @@ public class EnemyStats : MonoBehaviour
 
     void Update()
     {
-        if(hp <= 0)
+        if (hp <= 0)
         {
             Destroy(gameObject);
             GameObject p = Instantiate(deadParticles, gameObject.transform.position, gameObject.transform.rotation);
@@ -46,7 +47,6 @@ public class EnemyStats : MonoBehaviour
             hp = 0;
         }
     }
-
 
     private void OnDrawGizmosSelected()
     {

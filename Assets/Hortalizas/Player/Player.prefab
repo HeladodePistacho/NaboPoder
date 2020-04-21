@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6918770935354224938}
   - component: {fileID: 6918770935354224933}
   - component: {fileID: 6918770935354224932}
+  - component: {fileID: 1335368773749713792}
   - component: {fileID: 6918770935354224939}
   - component: {fileID: 1059449226276612637}
   - component: {fileID: 2051488768}
@@ -103,6 +104,25 @@ MonoBehaviour:
   max_move_speed: 3
   movement_acceleration: 300
   friction: 30
+--- !u!114 &1335368773749713792
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6918770935354224935}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20669169e176bb844adea5904b3a0ce5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  life: 50
+  nabos: 0
+  seeds: 0
+  dead: 0
+  UIhp: {fileID: 0}
+  UIturnips: {fileID: 0}
+  UIseeds: {fileID: 0}
 --- !u!114 &6918770935354224939
 MonoBehaviour:
   m_ObjectHideFlags: 0

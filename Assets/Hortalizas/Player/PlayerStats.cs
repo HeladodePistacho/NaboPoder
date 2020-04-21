@@ -11,18 +11,33 @@ public class PlayerStats : MonoBehaviour
     public int nabos = 0;
     public int seeds = 0;
     public bool dead = false;
-    [Header("Scene manager")]
-    public SceneHandler sceneHandler;
+    
     [Header("UI stuff")]
     public TextMeshProUGUI UIhp;
     public TextMeshProUGUI UIturnips;
     public TextMeshProUGUI UIseeds;
 
+    private SceneHandler sceneHandler;
+    private float damageDelayTimer = 5f;
+
+    private void Start()
+    {
+        sceneHandler = GameObject.FindGameObjectWithTag("SceneHandler").GetComponent<SceneHandler>();
+    }
     public void Update()
     {
+        damageDelayTimer += Time.deltaTime;
         UIhp.SetText("HP: " + life);
         UIturnips.SetText("Turnips: " + nabos);
         UIseeds.SetText("Seeds: " + seeds);
+    }
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        if (collision.collider.CompareTag("Enemy") && damageDelayTimer >= 1)
+        {
+            damageDelayTimer = 0f;
+            TakeDamage(collision.gameObject.GetComponent<EnemyStats>().damage);
+        }
     }
     // Getters
     public int GetLife()
