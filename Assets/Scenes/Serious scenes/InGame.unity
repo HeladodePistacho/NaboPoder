@@ -1554,11 +1554,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Nexus
       objectReference: {fileID: 0}
-    - target: {fileID: 4512007843382555642, guid: e41c47393232e184f9c2c2200d7fb53c,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e41c47393232e184f9c2c2200d7fb53c, type: 3}
 --- !u!1 &750193229
@@ -8751,7 +8746,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 20
-      m_TileSpriteIndex: 5
+      m_TileSpriteIndex: 8
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -8994,7 +8989,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 20
-      m_TileSpriteIndex: 8
+      m_TileSpriteIndex: 5
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -9663,7 +9658,7 @@ Tilemap:
     m_Data: {fileID: 6283908498951504376, guid: f09c6d5d909487345b39a47d193a88c2,
       type: 3}
   - m_RefCount: 1
-    m_Data: {fileID: -602857838496182610, guid: f09c6d5d909487345b39a47d193a88c2,
+    m_Data: {fileID: -1869543879494556866, guid: f09c6d5d909487345b39a47d193a88c2,
       type: 3}
   - m_RefCount: 3
     m_Data: {fileID: -5254581964159427824, guid: f09c6d5d909487345b39a47d193a88c2,
@@ -9672,7 +9667,7 @@ Tilemap:
     m_Data: {fileID: 1215233583730180832, guid: f09c6d5d909487345b39a47d193a88c2,
       type: 3}
   - m_RefCount: 1
-    m_Data: {fileID: -1869543879494556866, guid: f09c6d5d909487345b39a47d193a88c2,
+    m_Data: {fileID: -602857838496182610, guid: f09c6d5d909487345b39a47d193a88c2,
       type: 3}
   - m_RefCount: 5
     m_Data: {fileID: -8762513297001147307, guid: f09c6d5d909487345b39a47d193a88c2,
@@ -14794,12 +14789,12 @@ PrefabInstance:
     - target: {fileID: 6494402338636914869, guid: 7396f18b038e870408fa39a62764b01b,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.58
+      value: 0.96
       objectReference: {fileID: 0}
     - target: {fileID: 6494402338636914869, guid: 7396f18b038e870408fa39a62764b01b,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.28
+      value: 3.018
       objectReference: {fileID: 0}
     - target: {fileID: 6494402338636914869, guid: 7396f18b038e870408fa39a62764b01b,
         type: 3}

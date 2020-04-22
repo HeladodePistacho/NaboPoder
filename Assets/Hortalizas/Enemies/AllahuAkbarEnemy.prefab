@@ -404,12 +404,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6712501389357384569}
-  - component: {fileID: 6712501389357384575}
   - component: {fileID: 9093334522992669735}
   - component: {fileID: 9093334522992670685}
   - component: {fileID: 9093334521736209017}
   - component: {fileID: 9093334523080485825}
   - component: {fileID: 4682665122014910725}
+  - component: {fileID: 4537471286683884098}
   m_Layer: 13
   m_Name: AllahuAkbarEnemy
   m_TagString: Enemy
@@ -435,22 +435,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!58 &6712501389357384575
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6712501389357384573}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.14
 --- !u!50 &9093334522992669735
 Rigidbody2D:
   serializedVersion: 4
@@ -516,7 +500,7 @@ MonoBehaviour:
   targetPos: {x: 0, y: 0, z: 0}
   acceleration: 2000
   maxSpeed: 0.3
-  nextWaypointDistance: 0.3
+  nextWaypointDistance: 0.2
   refreshPathRate: 0.5
   graphics: {fileID: 2858030406967772710}
 --- !u!114 &9093334523080485825
@@ -554,6 +538,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pathfinding: {fileID: 9093334521736209017}
   anim: {fileID: 6511257501524823687}
+--- !u!70 &4537471286683884098
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6712501389357384573}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.0022318508, y: 0.2521931}
+  m_Size: {x: 0.54909927, y: 1.1026638}
+  m_Direction: 0
 --- !u!1 &8527430937094276096
 GameObject:
   m_ObjectHideFlags: 0
