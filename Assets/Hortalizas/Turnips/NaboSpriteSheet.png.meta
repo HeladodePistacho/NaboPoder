@@ -56,6 +56,42 @@ TextureImporter:
   - first:
       213: -7499563249638744177
     second: NaboSpriteSheet_17
+  - first:
+      213: 3768550890355970066
+    second: NaboSpriteSheet_18
+  - first:
+      213: -1772151109972964113
+    second: NaboSpriteSheet_19
+  - first:
+      213: 3430455917247542520
+    second: NaboSpriteSheet_20
+  - first:
+      213: -5112424422936522564
+    second: NaboSpriteSheet_21
+  - first:
+      213: 5323812854940111385
+    second: NaboSpriteSheet_22
+  - first:
+      213: 8540304756180253497
+    second: NaboSpriteSheet_23
+  - first:
+      213: -2237150056245560543
+    second: NaboSpriteSheet_24
+  - first:
+      213: 5243155127705593307
+    second: NaboSpriteSheet_25
+  - first:
+      213: 637200995575705813
+    second: NaboSpriteSheet_26
+  - first:
+      213: -1345036947774258600
+    second: NaboSpriteSheet_27
+  - first:
+      213: -6687403342941021137
+    second: NaboSpriteSheet_28
+  - first:
+      213: 7518261570337864984
+    second: NaboSpriteSheet_29
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -549,6 +585,237 @@ TextureImporter:
       bones: []
       spriteID: f8f55b675f23ce790800000000000000
       internalID: -7499563249638744177
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NaboSpriteSheet_18
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 31
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21056a171159c4430800000000000000
+      internalID: 3768550890355970066
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NaboSpriteSheet_19
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 31
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fec4fb964fd0867e0800000000000000
+      internalID: -1772151109972964113
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NaboSpriteSheet_20
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 31
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f43d2d3b7d6b9f20800000000000000
+      internalID: 3430455917247542520
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NaboSpriteSheet_21
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 31
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb056d9f2150d09b0800000000000000
+      internalID: -5112424422936522564
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NaboSpriteSheet_22
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 31
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9121d55b59bf1e940800000000000000
+      internalID: 5323812854940111385
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NaboSpriteSheet_23
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 31
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 93bf3b16de1458670800000000000000
+      internalID: 8540304756180253497
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NaboSpriteSheet_24
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 31
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 12bfc3470eb04f0e0800000000000000
+      internalID: -2237150056245560543
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NaboSpriteSheet_25
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 31
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd5e8292fcd63c840800000000000000
+      internalID: 5243155127705593307
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NaboSpriteSheet_26
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 31
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d0b0dfedeac7d800800000000000000
+      internalID: 637200995575705813
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NaboSpriteSheet_27
+      rect:
+        serializedVersion: 2
+        x: 270
+        y: 31
+        width: 30
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 852c326b508755de0800000000000000
+      internalID: -1345036947774258600
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NaboSpriteSheet_28
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 31
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2c9d3a47129133a0800000000000000
+      internalID: -6687403342941021137
       vertices: []
       indices: 
       edges: []
