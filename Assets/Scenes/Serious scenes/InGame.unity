@@ -10255,6 +10255,11 @@ PrefabInstance:
       propertyPath: static_camera
       value: 
       objectReference: {fileID: 1400116207}
+    - target: {fileID: 6918770935354224939, guid: c0ac2c5de0e309e46b55c3f04345143f,
+        type: 3}
+      propertyPath: selectionManager
+      value: 
+      objectReference: {fileID: 2051488764}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c0ac2c5de0e309e46b55c3f04345143f, type: 3}
 --- !u!1 &1252474647
@@ -10616,6 +10621,7 @@ GameObject:
   - component: {fileID: 1400116210}
   - component: {fileID: 1400116207}
   - component: {fileID: 1400116209}
+  - component: {fileID: 1400116211}
   - component: {fileID: 1400116208}
   m_Layer: 0
   m_Name: Static Camera
@@ -10651,7 +10657,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 2.18
+  orthographic size: 2.51
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -10676,12 +10682,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1400116206}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 017f16c531c12e84199ca49b4fddf234, type: 3}
+  m_Script: {fileID: 11500000, guid: 8b9a305e18de0c04dbd257a21cd47087, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 2051488763}
-  speed: 1
-  smooth_speed: 5
+  sharedProfile: {fileID: 11400000, guid: c3f4e9b3474b56e42926f8c6fad2bf7d, type: 2}
+  isGlobal: 1
+  blendDistance: 0
+  weight: 1
+  priority: 0
 --- !u!81 &1400116209
 AudioListener:
   m_ObjectHideFlags: 0
@@ -10698,12 +10706,72 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1400116206}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalPosition: {x: 1.35, y: -0.27, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1400116211
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1400116206}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 948f4100a11a5c24981795d21301da5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  volumeTrigger: {fileID: 1372764002}
+  volumeLayer:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  stopNaNPropagation: 1
+  finalBlitToCameraTarget: 0
+  antialiasingMode: 0
+  temporalAntialiasing:
+    jitterSpread: 0.75
+    sharpness: 0.25
+    stationaryBlending: 0.95
+    motionBlending: 0.85
+  subpixelMorphologicalAntialiasing:
+    quality: 2
+  fastApproximateAntialiasing:
+    fastMode: 0
+    keepAlpha: 0
+  fog:
+    enabled: 1
+    excludeSkybox: 1
+  debugLayer:
+    lightMeter:
+      width: 512
+      height: 256
+      showCurves: 1
+    histogram:
+      width: 512
+      height: 256
+      channel: 3
+    waveform:
+      exposure: 0.12
+      height: 256
+    vectorscope:
+      size: 256
+      exposure: 0.12
+    overlaySettings:
+      linearDepth: 0
+      motionColorIntensity: 4
+      motionGridSize: 64
+      colorBlindnessType: 0
+      colorBlindnessStrength: 1
+  m_Resources: {fileID: 11400000, guid: d82512f9c8e5d4a4d938b575d47f88d4, type: 2}
+  m_ShowToolkit: 0
+  m_ShowCustomSorter: 0
+  breakBeforeColorGrading: 0
+  m_BeforeTransparentBundles: []
+  m_BeforeStackBundles: []
+  m_AfterStackBundles: []
 --- !u!4 &1515929944 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4512078708923192378, guid: 4d506fc2e06f5b54fbbfd4ce1983b567,
@@ -14683,6 +14751,18 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1222915873}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2051488764 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2051488770, guid: c0ac2c5de0e309e46b55c3f04345143f,
+    type: 3}
+  m_PrefabInstance: {fileID: 1222915873}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2051488763}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24d3bbdcb205848479aaca8e089f2a6a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!82 &2051488773
 AudioSource:
   m_ObjectHideFlags: 0

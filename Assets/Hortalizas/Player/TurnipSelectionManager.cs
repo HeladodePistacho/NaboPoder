@@ -5,7 +5,7 @@ using UnityEngine;
 public class TurnipSelectionManager : MonoBehaviour
 {
     List<GameObject> selectedTurnips;
-    Camera main;
+    public Camera main;
     public GameObject allTurnips;
     public LayerMask layerForPoint;
     public LayerMask layerForSquare;

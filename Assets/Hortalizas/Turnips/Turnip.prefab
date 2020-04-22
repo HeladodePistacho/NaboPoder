@@ -207,8 +207,7 @@ MonoBehaviour:
   selected: 0
   deadParticles: {fileID: 1038737630018656925, guid: 7a31366b62e6a7e4e9a3dd714c533a6e,
     type: 3}
-  audioSource: {fileID: 7794796160763552295}
-  onDestroyClip: {fileID: 8300000, guid: 8d1d33233db95754c91c73d9eb34e80b, type: 3}
+  seed: {fileID: 6084590758451904022, guid: 13bf5dbb010e8e44ca029ff906b42da1, type: 3}
 --- !u!114 &498982821
 MonoBehaviour:
   m_ObjectHideFlags: 0

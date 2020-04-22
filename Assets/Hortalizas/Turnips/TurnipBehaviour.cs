@@ -32,6 +32,8 @@ public class TurnipBehaviour : MonoBehaviour
     public bool selected = false;
     public GameObject deadParticles;
 
+    public GameObject seed;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -120,6 +122,7 @@ public class TurnipBehaviour : MonoBehaviour
             Destroy(gameObject);
             GameObject p = Instantiate(deadParticles, gameObject.transform.position, gameObject.transform.rotation);
             Destroy(p, 3);
+            Instantiate(seed, gameObject.transform.position, gameObject.transform.rotation);
         }
 
         if (turnipState == TurnipState.FOLLOWING_PLAYER && collision.collider.CompareTag("Turnip"))

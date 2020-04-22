@@ -206,7 +206,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tileState: 0
-  timeUntilReady: 2
+  timeUntilReady: 20
   turnipPrefab: {fileID: 2528098163901431457, guid: 5f415a8b72ba74548928560c895eeab9,
     type: 3}
   allTurnips: {fileID: 0}

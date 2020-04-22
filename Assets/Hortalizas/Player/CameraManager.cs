@@ -7,6 +7,8 @@ public class CameraManager : MonoBehaviour
     public Camera player_camera;
     public Camera static_camera;
 
+   public TurnipSelectionManager selectionManager;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -34,6 +36,8 @@ public class CameraManager : MonoBehaviour
 
         player_camera.enabled = false;
         player_camera.gameObject.GetComponent<AudioListener>().enabled = false;
+
+        selectionManager.main = static_camera;
     }
 
     void ActivatePlayerCamera()
@@ -43,5 +47,8 @@ public class CameraManager : MonoBehaviour
 
         player_camera.enabled = true;
         player_camera.gameObject.GetComponent<AudioListener>().enabled = true;
+
+        selectionManager.main = player_camera;
+
     }
 }
