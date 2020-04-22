@@ -4867,6 +4867,5 @@ MonoBehaviour:
   audioSource: {fileID: 7015245810573470680}
   audioClips:
   - {fileID: 8300000, guid: ccef3953ad4b77d4f96320acdb74e2a9, type: 3}
-  - {fileID: 8300000, guid: a8ecd26d595ec9941b21e3f604dae563, type: 3}
   - {fileID: 8300000, guid: 257f22fd99745c94c8841a629d2db3e8, type: 3}
   - {fileID: 8300000, guid: 7c1dd8174428619498aa6e95283c7d10, type: 3}

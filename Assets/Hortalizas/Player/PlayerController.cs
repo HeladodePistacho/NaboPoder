@@ -8,14 +8,20 @@ public class PlayerController : MonoBehaviour
     public float movement_acceleration = 0.0f;
     public float friction = 0.0f;
 
+    public float damagedSpeed = 100f;
+    public float damagedTime = 0.1f;
+    public Color damagedColor = Color.red;
     Vector3 current_movement_speed;
 
-    int last_axis = 0;
-    
     //Animations
     Animator anim;
     SpriteRenderer renderer;
     Rigidbody2D rb;
+
+    bool damaged = false;
+    Vector2 pushDirection;
+
+    AudioSource audioSource;
 
     // Start is called before the first frame update
     void Start()
@@ -24,13 +30,15 @@ public class PlayerController : MonoBehaviour
         anim = GetComponent<Animator>();
         renderer = GetComponent<SpriteRenderer>();
         rb = GetComponent<Rigidbody2D>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        HandleMovement();
-    }  
+        if (damaged == false)
+            HandleMovement();
+    }
 
     void HandleMovement()
     {
@@ -71,7 +79,29 @@ public class PlayerController : MonoBehaviour
 
         rb.velocity = current_movement_speed;// transform.Translate(current_movement_speed * Time.deltaTime);
     }
-   
+
+    public void Damage(Vector2 _pushDirection)
+    {
+        damaged = true;
+        pushDirection = _pushDirection;
+        audioSource.PlayOneShot(audioSource.clip);
+        StartCoroutine(DamageCountdown());
+    }
+
+    IEnumerator DamageCountdown()
+    {
+        float timer = 0;
+        renderer.color = damagedColor;
+        while (timer < damagedTime)
+        {
+            timer += Time.deltaTime;
+            rb.velocity = pushDirection * damagedSpeed;
+            yield return null;
+        }
+        renderer.color = Color.white;
+        damaged = false;
+    }
+
     void ManageAnimation()
     {
         if (current_movement_speed.x == 0.0f && current_movement_speed.y == 0)

@@ -300,6 +300,7 @@ MonoBehaviour:
   initPos: {x: 0, y: 0, z: 0}
   speed: 1
   sightRange: 1.88
+  loseSightRange: 4
   hp: 3
   damage: 5
   deadParticles: {fileID: 1038737630018656925, guid: 4fce010b54de1c04abd8a9110cac602a,
@@ -330,8 +331,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3939434024679500580}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.117, z: 0}
-  m_LocalScale: {x: 1.7375, y: 1, z: 1}
+  m_LocalPosition: {x: 0.0505, y: -0.2549, z: 0}
+  m_LocalScale: {x: 4.2615423, y: 2.3008919, z: 1}
   m_Children: []
   m_Father: {fileID: 2151510529204759645}
   m_RootOrder: 0

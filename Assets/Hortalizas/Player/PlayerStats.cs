@@ -20,9 +20,12 @@ public class PlayerStats : MonoBehaviour
     private SceneHandler sceneHandler;
     private float damageDelayTimer = 5f;
 
+    private Rigidbody2D rb;
+
     private void Start()
     {
         sceneHandler = GameObject.FindGameObjectWithTag("SceneHandler").GetComponent<SceneHandler>();
+        rb = GetComponent<Rigidbody2D>();
     }
     public void Update()
     {
@@ -31,11 +34,14 @@ public class PlayerStats : MonoBehaviour
         UIturnips.SetText("Turnips: " + nabos);
         UIseeds.SetText("Seeds: " + seeds);
     }
-    private void OnCollisionStay2D(Collision2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.collider.CompareTag("Enemy") && damageDelayTimer >= 1)
+        if (collision.collider.CompareTag("Enemy") && damageDelayTimer >= 0.2)
         {
             damageDelayTimer = 0f;
+
+            Vector2 direction = transform.position - collision.transform.position;
+            GetComponent<PlayerController>().Damage(direction.normalized);
             TakeDamage(collision.gameObject.GetComponent<EnemyStats>().damage);
         }
     }
@@ -76,6 +82,7 @@ public class PlayerStats : MonoBehaviour
     public int TakeDamage(int dmg)
     {
         life -= dmg;
+        
         if (life <= 0)
             KillPlayer();
         return life;
