@@ -173,7 +173,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: -4089156641048579982, guid: 834323efae741d64f870d66e7b956328,
     type: 3}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -217,7 +217,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &4349203885837687540
 Transform:
@@ -534,6 +534,7 @@ MonoBehaviour:
   initPos: {x: 0, y: 0, z: 0}
   speed: 0.00000001
   sightRange: 5
+  loseSightRange: 4
   hp: 2
   damage: 5
   deadParticles: {fileID: 1038737630018656925, guid: 4fce010b54de1c04abd8a9110cac602a,
@@ -578,8 +579,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8527430937094276096}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.117, z: 0}
-  m_LocalScale: {x: 1.7375, y: 1, z: 1}
+  m_LocalPosition: {x: 0.0505, y: -0.2549, z: 0}
+  m_LocalScale: {x: 4.2615423, y: 2.3008919, z: 1}
   m_Children: []
   m_Father: {fileID: 6712501389357384569}
   m_RootOrder: 0

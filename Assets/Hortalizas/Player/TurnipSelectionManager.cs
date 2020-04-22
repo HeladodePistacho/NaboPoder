@@ -338,6 +338,7 @@ public class TurnipSelectionManager : MonoBehaviour
         else if (tileController.tileState == TileState.READY_TO_COLLECT)
         {
             audioSource.PlayOneShot(collectClip, 0.1f);
+            playerStats.TakeNabos(1);
             tileController.CollectTile();
         }
 

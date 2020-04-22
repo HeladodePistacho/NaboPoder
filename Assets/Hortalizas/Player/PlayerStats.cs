@@ -55,7 +55,7 @@ public class PlayerStats : MonoBehaviour
 
             Vector2 direction = transform.position - collision.transform.position;
             GetComponent<PlayerController>().Damage(direction.normalized);
-            TakeDamage(collision.gameObject.GetComponent<EnemyStats>().damage);
+            TakeDamage(1);
         }
        
     }

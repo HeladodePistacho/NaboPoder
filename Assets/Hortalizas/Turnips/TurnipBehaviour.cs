@@ -121,6 +121,7 @@ public class TurnipBehaviour : MonoBehaviour
         {
             Destroy(gameObject);
             GameObject p = Instantiate(deadParticles, gameObject.transform.position, gameObject.transform.rotation);
+            GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerStats>().TakeNabos(-1);
             Destroy(p, 3);
             Instantiate(seed, gameObject.transform.position, gameObject.transform.rotation);
         }

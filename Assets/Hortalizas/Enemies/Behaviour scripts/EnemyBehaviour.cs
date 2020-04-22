@@ -8,7 +8,6 @@ public enum EnemyState
     IDLE,
     BACK_TO_INIT_POS,
     FOLLOWING_PLAYER,
-    ATTACK_NEXUS,
     HIT_PLAYER
 }
 
@@ -17,13 +16,11 @@ public class EnemyBehaviour : MonoBehaviour
     // private variables
     private EnemyStats enemyStats;
     private Vector3 initPosition;
-    private Vector3 nexusPos;
     
     // public variables
     public EnemyState enemyState = EnemyState.IDLE;
     public HortalizaPathfinding pathfinding;
     
-
     Camera main;
     Transform player;
 
@@ -33,7 +30,6 @@ public class EnemyBehaviour : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        nexusPos = GameObject.FindGameObjectWithTag("Nexus").transform.position;
         initPosition = new Vector3(transform.position.x, transform.position.y, transform.position.z);
         main = Camera.main;
         player = GameObject.FindGameObjectWithTag("Player").transform;
@@ -54,7 +50,6 @@ public class EnemyBehaviour : MonoBehaviour
             case EnemyState.IDLE:
                 Update_Idle();
                 break;
-            //case EnemyState.ATTACK_NEXUS:
 
         }
     }
