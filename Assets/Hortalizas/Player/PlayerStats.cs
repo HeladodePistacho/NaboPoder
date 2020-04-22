@@ -34,6 +34,19 @@ public class PlayerStats : MonoBehaviour
         UIturnips.SetText("Turnips: " + nabos);
         UIseeds.SetText("Seeds: " + seeds);
     }
+
+
+    public AudioSource source;
+    public AudioClip collectClip;
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+         if (collision.CompareTag("TurnipSeed"))
+        {
+            Destroy(collision.gameObject);
+            source.PlayOneShot(collectClip);
+            AddSeeds(1);
+        }
+    }
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.collider.CompareTag("Enemy") && damageDelayTimer >= 0.2)
@@ -44,6 +57,7 @@ public class PlayerStats : MonoBehaviour
             GetComponent<PlayerController>().Damage(direction.normalized);
             TakeDamage(collision.gameObject.GetComponent<EnemyStats>().damage);
         }
+       
     }
     // Getters
     public int GetLife()

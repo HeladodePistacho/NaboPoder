@@ -22,9 +22,10 @@ public class TurnipSelectionManager : MonoBehaviour
     Vector3 selectedPosition = Vector3.zero;
 
     Transform hover;
-
+    PlayerStats playerStats;
     void Start()
     {
+        playerStats = GetComponent<PlayerStats>();
         selectedTurnips = new List<GameObject>();
         main = Camera.main;
     }
@@ -42,7 +43,7 @@ public class TurnipSelectionManager : MonoBehaviour
         RaycastHit2D hit = Physics2D.Raycast(mousePos, Vector2.zero, 0, layerForPoint);
         if (hit.collider != null)
         {
-            if(hover != null)
+            if (hover != null)
             {
                 hover.GetChild(0).gameObject?.SetActive(false);
                 hover = null;
@@ -164,7 +165,7 @@ public class TurnipSelectionManager : MonoBehaviour
 
         if (Input.GetMouseButton(1))
         {
-            if(hover && hover.CompareTag("Enemy"))
+            if (hover && hover.CompareTag("Enemy"))
             {
                 SetDestinationForSelected(hit.collider.transform);
                 return;
@@ -313,14 +314,30 @@ public class TurnipSelectionManager : MonoBehaviour
         hasCreatedSquare = true;
     }
 
+
+    public AudioSource audioSource;
+    public AudioClip noSeedsClip;
+    public AudioClip plantClip;
+    public AudioClip collectClip;
     void ManageTile(PlantableTileController tileController)
     {
         if (tileController.tileState == TileState.PLANTABLE)
         {
-            tileController.PlantTile();
+            if (playerStats.GetSeeds() > 0)
+            {
+                tileController.PlantTile();
+                playerStats.AddSeeds(-1);
+                audioSource.PlayOneShot(plantClip, 0.1f);
+            }
+            else
+            {
+                audioSource.PlayOneShot(noSeedsClip, 0.1f);
+            }
+
         }
         else if (tileController.tileState == TileState.READY_TO_COLLECT)
         {
+            audioSource.PlayOneShot(collectClip, 0.1f);
             tileController.CollectTile();
         }
 

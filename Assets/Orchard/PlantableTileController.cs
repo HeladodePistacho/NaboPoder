@@ -41,6 +41,7 @@ public class PlantableTileController : MonoBehaviour
 
     public void CollectTile()
     {
+
         tileState = TileState.PLANTABLE;
         anim.SetInteger("TileState", 0);
         Instantiate<GameObject>(turnipPrefab, transform.position, Quaternion.identity, allTurnips);

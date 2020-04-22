@@ -46,6 +46,7 @@ public class EnemyStats : MonoBehaviour
             GameObject.FindGameObjectWithTag("Nexus").GetComponent<NexusStats>().hp -= damage;
             hp = 0;
         }
+        
     }
 
     private void OnDrawGizmosSelected()

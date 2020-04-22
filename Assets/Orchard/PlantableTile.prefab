@@ -26,7 +26,7 @@ Transform:
   m_GameObject: {fileID: 1904634027304265645}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.14395, y: 1.14395, z: 1}
+  m_LocalScale: {x: 1.8273159, y: 1.8387197, z: 1}
   m_Children: []
   m_Father: {fileID: 4512078708923192378}
   m_RootOrder: 0
@@ -205,9 +205,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8668a1dc8c64424281b21b230ea4d64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  plantableColor: {r: 1, g: 1, b: 1, a: 1}
-  plantedColor: {r: 0.5377358, g: 0.34180623, b: 0.07863118, a: 1}
-  readyColor: {r: 1, g: 0, b: 0.99701786, a: 1}
   tileState: 0
   timeUntilReady: 2
   turnipPrefab: {fileID: 2528098163901431457, guid: 5f415a8b72ba74548928560c895eeab9,
