@@ -50,7 +50,7 @@ public class EnemyNexusStats : MonoBehaviour
         if (hp <= 0)
         {
             Destroy(gameObject);
-            //TODO: win scene sceneHandler.GoToNexusDeadScene();
+            sceneHandler.WinScene();
         }
     }
 

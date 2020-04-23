@@ -54,6 +54,12 @@ public class SceneHandler : MonoBehaviour
         sceneToLoad = "NexusDeadScene";
         LoadingScene();
     }
+
+    public void WinScene()
+    {
+        sceneToLoad = "WinScene";
+        LoadingScene();
+    }
     // Load saved scene
     private void LoadingScene()
     {

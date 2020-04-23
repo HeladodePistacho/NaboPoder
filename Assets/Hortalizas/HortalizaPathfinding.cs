@@ -22,6 +22,7 @@ public class HortalizaPathfinding : MonoBehaviour
     Path path;
     int currentWaypoint = 0;
     bool reachedEnd = false;
+    bool seekingEnemy = false;
 
     Seeker seeker;
     Rigidbody2D rb;
@@ -37,20 +38,21 @@ public class HortalizaPathfinding : MonoBehaviour
 
     public void SetTarget(Vector3 _target, UnityAction onEnd)
     {
-        if(path != null)
+        if (path != null)
             CancelInvoke("UpdatePath");
 
         onReachedEnd = onEnd;
         targetObj = null;
         targetPos = _target;
         reachedEnd = false;
+        seekingEnemy = false;
         InvokeRepeating("UpdatePath", 0f, refreshPathRate);
     }
     public void SetTarget(Transform _target, UnityAction onEnd)
     {
         if (path != null)
             CancelInvoke("UpdatePath");
-
+        seekingEnemy = true;
         onReachedEnd = onEnd;
         targetObj = _target;
         reachedEnd = false;
@@ -59,6 +61,7 @@ public class HortalizaPathfinding : MonoBehaviour
 
     public void Stop()
     {
+        seekingEnemy = false;
         rb.velocity = Vector2.zero;
         reachedEnd = true;
         CancelInvoke("UpdatePath");
@@ -70,26 +73,32 @@ public class HortalizaPathfinding : MonoBehaviour
     {
         if (reachedEnd == false && seeker.IsDone())
         {
-            if(targetObj != null)
-              seeker.StartPath(rb.position, targetObj.position, OnPathGenerationComplete);
+            if (targetObj != null)
+                seeker.StartPath(rb.position, targetObj.position, OnPathGenerationComplete);
             else
-              seeker.StartPath(rb.position, targetPos, OnPathGenerationComplete);
+            {
+                if (seekingEnemy == true)
+                {                    
+                    Stop();
+                }
+                else seeker.StartPath(rb.position, targetPos, OnPathGenerationComplete);
+            }
         }
     }
 
     void OnPathGenerationComplete(Path p)
     {
-        if(!p.error)
+        if (!p.error)
         {
             path = p;
-            currentWaypoint = 0;           
+            currentWaypoint = 0;
         }
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        if(path == null)
+        if (path == null)
             return;
 
         if (currentWaypoint >= path.vectorPath.Count)
@@ -108,7 +117,7 @@ public class HortalizaPathfinding : MonoBehaviour
         currentMovementSpeed.y = Mathf.Clamp(rb.velocity.y, -maxSpeed, maxSpeed);
 
         rb.velocity = currentMovementSpeed;
-        
+
         float distance = Vector2.Distance(rb.position, path.vectorPath[currentWaypoint]);
 
         if (distance < nextWaypointDistance)
