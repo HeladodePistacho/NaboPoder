@@ -282,7 +282,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   initPos: {x: 0, y: 0, z: 0}
-  speed: 1
+  speed: 4
   sightRange: 1.88
   loseSightRange: 4
   hp: 3
