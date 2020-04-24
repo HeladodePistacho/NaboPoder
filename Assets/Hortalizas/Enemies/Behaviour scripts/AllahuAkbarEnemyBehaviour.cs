@@ -6,7 +6,7 @@ public class AllahuAkbarEnemyBehaviour : MonoBehaviour
 {
     // private variables
     private EnemyStats enemyStats;
-    private Vector3 nexusPos;
+    private GameObject nexus;
 
     // public variables
     public HortalizaPathfinding pathfinding;
@@ -20,8 +20,8 @@ public class AllahuAkbarEnemyBehaviour : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        nexusPos = GameObject.FindGameObjectWithTag("Nexus").transform.position;
-        pathfinding.SetTarget(nexusPos, AttackNexus);
+        nexus = GameObject.FindGameObjectWithTag("Nexus");
+        pathfinding.SetTarget(nexus.transform, AttackNexus);
         anim.SetBool("Moving", true);
     }
 
