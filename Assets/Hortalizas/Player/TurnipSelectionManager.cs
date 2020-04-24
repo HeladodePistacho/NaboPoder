@@ -56,14 +56,13 @@ public class TurnipSelectionManager : MonoBehaviour
             {
                 selectionMark.SetActive(true);
                 hover = hit.transform;
-                Debug.Log("Hover");
             }
 
 
         }
         else if (hover != null)
         {
-            Debug.Log("StopHover");
+
             hover.GetChild(0).gameObject?.SetActive(false);
             hover = null;
 
