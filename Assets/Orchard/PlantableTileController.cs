@@ -14,6 +14,7 @@ public class PlantableTileController : MonoBehaviour
 
    public TileState tileState = TileState.PLANTABLE;
     public float timeUntilReady = 2f;
+    float timer = 0.0f;
 
     public GameObject turnipPrefab;
     public Transform allTurnips;
@@ -29,6 +30,16 @@ public class PlantableTileController : MonoBehaviour
         tileState = TileState.PLANTED;
         anim.SetInteger("TileState", 1);
         StartCoroutine(Wait());
+    }
+
+    void Update()
+    {
+        if (tileState == TileState.PLANTED)
+        {
+            timer += Time.deltaTime / timeUntilReady;
+            anim.SetFloat("tmp", timer);
+        }
+        else timer = 0.0f;
     }
 
     IEnumerator Wait()
